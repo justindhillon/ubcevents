@@ -16,7 +16,7 @@ $ # Clone the sources
 $ git clone https://github.com/justindhillon/ubcevents
 $
 $ # Run the application
-$ cd ubcgrades && npm run dev
+$ cd ubcevents && npm run dev
 $
 $ # Start the application at https://localhost:3000.
 ```
