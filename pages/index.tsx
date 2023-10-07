@@ -8,7 +8,7 @@ export const getStaticProps: GetStaticProps = async () => {
     {
       id: "1",
       title: "First Post",
-      content: "This is just a test",
+      content: "This is just a test 2",
       published: false,
       author: {
         name: "Justin Dhillon",
