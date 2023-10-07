@@ -11,7 +11,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     content: "[Prisma](https://github.com/prisma/prisma) and Next.js go _great_ together!",
     published: false,
     author: {
-      name: "Nikolas Burk",
+      name: "Justin Dhillon",
       email: "burk@prisma.io",
     },
   }
