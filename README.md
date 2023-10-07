@@ -15,11 +15,11 @@ This is the source code for https://ubcevents.vercel.app/.
 $ # Clone the sources
 $ git clone https://github.com/justindhillon/ubcevents
 $
-$ # Run the application
-$ cd ubcevents && npm run dev
+$ # Setup the application
+$ cd ubcevents && npm i next
 $
-$ # Setup application
-$ npm i next
+$ # Run application
+$ npm run dev
 $
 $ # Start the application at https://localhost:3000.
 ```
