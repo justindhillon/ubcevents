@@ -7,12 +7,12 @@ import { PostProps } from "../../components/Post"
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const post = {
     id: "1",
-    title: "Prisma is the perfect ORM for Next.js",
-    content: "[Prisma](https://github.com/prisma/prisma) and Next.js go _great_ together!",
+    title: "First Post",
+    content: "This is just a test",
     published: false,
     author: {
       name: "Justin Dhillon",
-      email: "burk@prisma.io",
+      email: "justin.singh.dhillon@gmail.com",
     },
   }
   return {
