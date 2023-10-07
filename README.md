@@ -20,3 +20,6 @@ $ cd ubcevents && npm run dev
 $
 $ # Start the application at https://localhost:3000.
 ```
+
+## Creddit
+[How to setup a vps](https://drive.google.com/file/d/1q8Yk_qMm_xsweXOStsRf-R-sMXmD6qpu/view?pli=1)
