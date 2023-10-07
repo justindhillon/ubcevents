@@ -18,6 +18,9 @@ $
 $ # Run the application
 $ cd ubcevents && npm run dev
 $
+$ # Setup application
+$ npm i next
+$
 $ # Start the application at https://localhost:3000.
 ```
 
