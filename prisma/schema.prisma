@@ -14,7 +14,7 @@ model Post {
   id        String  @id @default(cuid())
   title     String
   content   String?
-  eventDate Date?
+  eventDate DateTime?
   published Boolean @default(false)
   author    User?   @relation(fields: [authorId], references: [id])
   authorId  String?
