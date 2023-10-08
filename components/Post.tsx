@@ -19,7 +19,7 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
   return (
     <div onClick={() => Router.push("/p/[id]", `/p/${post.id}`)}>
       <h2>{post.title}</h2>
-      <small>{eventDate}</small>
+      <small>{post.eventDate}</small>
       <small>By {authorName}</small>
       <ReactMarkdown children={post.content} />
       <style jsx>{`
