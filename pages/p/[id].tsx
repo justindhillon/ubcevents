@@ -1,24 +1,25 @@
 import React from "react"
+import prisma from '../../lib/prisma';
 import { GetServerSideProps } from "next"
 import ReactMarkdown from "react-markdown"
 import Layout from "../../components/Layout"
 import { PostProps } from "../../components/Post"
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-  const post = {
-    id: "1",
-    title: "First Post",
-    content: "This is just a test",
-    published: false,
-    author: {
-      name: "Justin Dhillon",
-      email: "justin.singh.dhillon@gmail.com",
+  const post = await prisma.post.findUnique({
+    where: {
+      id: String(params?.id),
     },
-  }
+    include: {
+      author: {
+        select: { name: true },
+      },
+    },
+  });
   return {
     props: post,
-  }
-}
+  };
+};
 
 const Post: React.FC<PostProps> = (props) => {
   let title = props.title
