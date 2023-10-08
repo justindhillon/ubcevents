@@ -10,12 +10,8 @@ const Draft: React.FC = () => {
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     try {
-      // Need to turn date string int DateTime object
+      // Need to turn date string into DateTime object
       const usableDate = new Date(eventDate);
-
-      console.log(eventDate);
-      console.log(usableDate);
-
       const body = { title, content, usableDate };
       await fetch("/api/post", {
         method: "POST",
