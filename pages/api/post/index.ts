@@ -12,7 +12,7 @@ export default async function handle(req, res) {
     data: {
       title: title,
       content: content,
-      date: date,
+      eventDate: date,
       author: { connect: { email: session?.user?.email } },
     },
   });

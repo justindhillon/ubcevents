@@ -5,12 +5,12 @@ import Router from "next/router";
 const Draft: React.FC = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [date, setDate] = useState("");
+  const [eventDate, setDate] = useState("");
 
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     try {
-      const body = { title, content, date };
+      const body = { title, content, eventDate };
       await fetch("/api/post", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -45,10 +45,10 @@ const Draft: React.FC = () => {
           <input 
             onChange={(e) => setDate(e.target.value)}
             type="date" 
-            value={date}
+            value={eventDate}
           />
           <br /><br />
-          <input disabled={!content || !title || !date} type="submit" value="Create" />
+          <input disabled={!content || !title || !eventDate} type="submit" value="Create" />
           <a className="back" href="#" onClick={() => Router.push("/")}>
             or Cancel
           </a>
