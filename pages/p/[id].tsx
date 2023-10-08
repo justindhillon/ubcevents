@@ -16,7 +16,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
       author: {
         select: { name: true, email: true },
       },
-      eventDate: eventDate;
+      eventDate: eventDate,
     },
   });
   return {
