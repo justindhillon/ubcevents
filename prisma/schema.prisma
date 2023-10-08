@@ -1,12 +1,22 @@
 // schema.prisma
 
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("DATABASE_URL") // uses connection pooling
+}
+
 model Post {
   id        String  @id @default(cuid())
   title     String
   content   String?
   published Boolean @default(false)
   author    User?@relation(fields:[authorId], references:[id])
-  authorId  String?}
+  authorId  String?
+}
 
 model Account {
   id                 String  @id @default(cuid())
@@ -26,14 +36,16 @@ model Account {
 
   user User @relation(fields:[userId], references:[id], onDelete: Cascade)
 
-  @@unique([provider, providerAccountId])}
+  @@unique([provider, providerAccountId])
+}
 
 model Session {
   id           String   @id @default(cuid())
   sessionToken String   @unique@map("session_token")
   userId       String   @map("user_id")
   expires      DateTime
-  user         User     @relation(fields:[userId], references:[id], onDelete: Cascade)}
+  user         User     @relation(fields:[userId], references:[id], onDelete: Cascade)
+}
 
 model User {
   id            String    @id @default(cuid())
@@ -43,7 +55,8 @@ model User {
   image         String?
   posts         Post[]
   accounts      Account[]
-  sessions      Session[]}
+  sessions      Session[]
+}
 
 model VerificationToken {
   id         Int      @id @default(autoincrement())
@@ -51,4 +64,5 @@ model VerificationToken {
   token      String   @unique
   expires    DateTime
 
-  @@unique([identifier, token])}
+  @@unique([identifier, token])
+}
