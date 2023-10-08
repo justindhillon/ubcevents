@@ -15,12 +15,11 @@ export type PostProps = {
 };
 
 const Post: React.FC<{ post: PostProps }> = ({ post }) => {
-  console.log(post.published);
   const authorName = post.author ? post.author.name : "Unknown author";
   return (
     <div onClick={() => Router.push("/p/[id]", `/p/${post.id}`)}>
       <h2>{post.title}</h2>
-      <small>{post.published}</small>
+      <small>{post.eventDate}</small>
       <br />
       <small>By {authorName}</small>
       <ReactMarkdown children={post.content} />

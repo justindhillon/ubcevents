@@ -12,6 +12,10 @@ const Draft: React.FC = () => {
     try {
       // Need to turn date string int DateTime object
       const usableDate = new Date(eventDate);
+
+      console.log(eventDate);
+      console.log(usableDate);
+
       const body = { title, content, usableDate };
       await fetch("/api/post", {
         method: "POST",
