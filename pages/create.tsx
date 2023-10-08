@@ -41,11 +41,13 @@ const Draft: React.FC = () => {
             rows={8}
             value={content}
           />
+          <label>Date Of Event: </label>
           <input 
             onChange={(e) => setDate(e.target.value)}
             type="date" 
             value={date}
           />
+          <br />
           <input disabled={!content || !title || !date} type="submit" value="Create" />
           <a className="back" href="#" onClick={() => Router.push("/")}>
             or Cancel
