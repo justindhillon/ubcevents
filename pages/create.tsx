@@ -5,13 +5,12 @@ import Router from "next/router";
 const Draft: React.FC = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [eventDateString, setDate] = useState("");
+  const [eventDate, setDate] = useState("");
 
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     try {
       // Need to turn date string into DateTime object
-      const eventDate = new Date(eventDateString);
       const body = { title, content, eventDate };
       await fetch("/api/post", {
         method: "POST",
@@ -47,10 +46,10 @@ const Draft: React.FC = () => {
           <input 
             onChange={(e) => setDate(e.target.value)}
             type="date" 
-            value={eventDateString}
+            value={eventDate}
           />
           <br /><br />
-          <input disabled={!content || !title || !eventDateString} type="submit" value="Create" />
+          <input disabled={!content || !title || !eventDate} type="submit" value="Create" />
           <a className="back" href="#" onClick={() => Router.push("/")}>
             or Cancel
           </a>
