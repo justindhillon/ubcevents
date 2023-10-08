@@ -10,7 +10,9 @@ const Draft: React.FC = () => {
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     try {
-      const body = { title, content, eventDate };
+      // Need to turn date string int DateTime object
+      const usableDate = new Date(eventDate);
+      const body = { title, content, usableDate };
       await fetch("/api/post", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
