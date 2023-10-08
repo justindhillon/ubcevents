@@ -47,7 +47,7 @@ const Draft: React.FC = () => {
             type="date" 
             value={date}
           />
-          <br />
+          <br /><br />
           <input disabled={!content || !title || !date} type="submit" value="Create" />
           <a className="back" href="#" onClick={() => Router.push("/")}>
             or Cancel
