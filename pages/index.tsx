@@ -31,7 +31,7 @@ const Blog: React.FC<Props> = (props) => {
     let dateB = new Date(b);
 
     // Subtract the dates to get a value that is either negative, positive, or zero
-    return dateB - dateA;
+    return dateA - dateB;
   });
 
   return (
