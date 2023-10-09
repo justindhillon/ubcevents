@@ -36,7 +36,9 @@ const Blog: React.FC<Props> = (props) => {
   });
   */
 
-  let feed = [];
+  let feed = Object.values(props.feed).forEach(array => array.sort((a,b) => a.eventDate-b.eventData));
+
+  console.log(feed);
 
   console.log(props.feed);
 
