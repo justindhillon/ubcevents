@@ -36,9 +36,9 @@ const Blog: React.FC<Props> = (props) => {
   });
   */
 
-  let feed = props.feed.map(post);
+  let feed = [];
 
-  console.log(feed);
+  console.log(props.feed);
 
   return (
     <Layout>
