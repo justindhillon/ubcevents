@@ -36,7 +36,14 @@ const Blog: React.FC<Props> = (props) => {
   });
   */
 
-  let feed = Object.values(props.feed).forEach(array => array.sort((a,b) => a.eventDate-b.eventData));
+  // Sort feed by which ones are comming up soonest
+  const feed = props.feed.sort((a, b) => {
+    let dateA = new Date(a.eventData);
+    let dateB = new Date(b.eventData);
+    if (dateA < dateB) {
+      return -1;
+    }
+  });
 
   console.log(feed);
 
