@@ -11,7 +11,7 @@ export default async function handle(req, res) {
     data: {
       title: title,
       content: content,
-      dateString: dateString;
+      dateString: dateString,
       date: date,
       author: { connect: { email: session?.user?.email } },
     },
