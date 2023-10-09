@@ -1,5 +1,5 @@
 #!/bin/sh
-DATE_TODAY=$(printf "%(%F)T\n" $EPOCHSECONDS)
+DATE_TODAY=$(date +%Y-%m-%d)
 
 echo $DATE_TODAY
 
