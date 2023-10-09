@@ -24,6 +24,7 @@ type Props = {
 }
 
 const Blog: React.FC<Props> = (props) => {
+  /*
   // Sort by date string in ascending order
   props.feed.sort(function(a, b) {
     // Convert the date strings to Date objects
@@ -33,6 +34,11 @@ const Blog: React.FC<Props> = (props) => {
     // Subtract the dates to get a value that is either negative, positive, or zero
     return dateA - dateB;
   });
+  */
+
+  let feed = props.feed.map((post));
+
+  console.log(feed);
 
   return (
     <Layout>
