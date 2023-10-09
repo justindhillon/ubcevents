@@ -5,15 +5,13 @@ import Router from "next/router";
 const Draft: React.FC = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [dateString, setDate] = useState("");
+  const [eventDate, setDate] = useState("");
 
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     try {
-      // dateString is the date that will be displayed on posts
-      // date is for sorting the posts
-      const date = new Date(dateString);
-      const body = { title, content, dateString, date };
+      // Need to turn date string into DateTime object
+      const body = { title, content, eventDate };
       await fetch("/api/post", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -48,10 +46,10 @@ const Draft: React.FC = () => {
           <input 
             onChange={(e) => setDate(e.target.value)}
             type="date" 
-            value={dateString}
+            value={eventDate}
           />
           <br /><br />
-          <input disabled={!content || !title || !dateString} type="submit" value="Create" />
+          <input disabled={!content || !title || !eventDate} type="submit" value="Create" />
           <a className="back" href="#" onClick={() => Router.push("/")}>
             or Cancel
           </a>

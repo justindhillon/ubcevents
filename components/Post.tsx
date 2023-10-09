@@ -10,7 +10,7 @@ export type PostProps = {
     email: string;
   } | null;
   content: string;
-  dateString: string;
+  eventDate: Date;
   published: boolean;
 };
 
@@ -18,7 +18,7 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
   return (
     <div onClick={() => Router.push("/p/[id]", `/p/${post.id}`)}>
       <h2>{post.title}</h2>
-      <small>{post.dateString}</small>
+      <small>{post.eventDate}</small>
       <ReactMarkdown children={post.content} />
       <style jsx>{`
         div {

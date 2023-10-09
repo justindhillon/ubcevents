@@ -11,14 +11,13 @@ generator client {
 }
 
 model Post {
-  id          String  @id @default(cuid())
-  title       String
-  content     String?
-  date        DateTime?
-  dateString  String?
-  published   Boolean @default(false)
-  author      User?   @relation(fields: [authorId], references: [id])
-  authorId    String?
+  id        String  @id @default(cuid())
+  title     String
+  content   String?
+  eventDate String?
+  published Boolean @default(false)
+  author    User?   @relation(fields: [authorId], references: [id])
+  authorId  String?
 }
 
 model Account {
