@@ -5,13 +5,14 @@ import prisma from "../../../lib/prisma";
 // Required fields in body: title
 // Optional fields in body: content
 export default async function handle(req, res) {
-  const { title, content, eventDate } = req.body;
+  const { title, content, dateString, date } = req.body;
   const session = await getSession({ req });
   const result = await prisma.post.create({
     data: {
       title: title,
       content: content,
-      eventDate: eventDate,
+      dateString: dateString;
+      date: date,
       author: { connect: { email: session?.user?.email } },
     },
   });

@@ -53,7 +53,7 @@ const Post: React.FC<PostProps> = (props) => {
     <Layout>
       <div>
         <h2>{title}</h2>
-        <small>{props?.eventDate}</small>
+        <small>{props?.dateString}</small>
         <p>By {props?.author?.name || "Unknown author"}</p>
         <ReactMarkdown children={props.content} />
         {!props.published && userHasValidSession && postBelongsToUser && (
