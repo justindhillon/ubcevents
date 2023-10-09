@@ -49,6 +49,7 @@ const Draft: React.FC = () => {
             value={eventDate}
           />
           <br /><br />
+          <small>Note: if you enter an event day that has already pasted, it will be automaticlly deleted</small>
           <input disabled={!content || !title || !eventDate} type="submit" value="Create" />
           <a className="back" href="#" onClick={() => Router.push("/")}>
             or Cancel
