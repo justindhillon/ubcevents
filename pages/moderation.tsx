@@ -81,6 +81,7 @@ const Moderation: React.FC<Props> = (props) => {
           display: flex;
           justify-content: center;
           align-items: stretch;
+          width: 100%;
         }
 
         button {
