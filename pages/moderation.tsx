@@ -82,6 +82,8 @@ const Moderation: React.FC<Props> = (props) => {
           display: flex;
           justify-content: center;
           align-items: stretch;
+          margin: 2rem;
+          margin-bottom: 4rem;
         }
 
         button {
@@ -89,9 +91,11 @@ const Moderation: React.FC<Props> = (props) => {
           border: 0;
           border-radius: 0.125rem;
           padding: 2rem 4rem;
-          margin: 2rem;
-          margin-bottom: 4rem;
           flex-grow: 10;
+        }
+
+        button + button {
+          margin-left: 1rem;
         }
       `}</style>
     </Layout>
