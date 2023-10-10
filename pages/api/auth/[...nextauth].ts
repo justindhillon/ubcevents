@@ -14,6 +14,12 @@ const options = {
       clientSecret: process.env.GITHUB_SECRET,
     }),
   ],
+  callbacks: {
+    session({ session, user }) {
+      session.user.moderator = user.moderator
+      return session
+    }
+  }
   adapter: PrismaAdapter(prisma),
   secret: process.env.SECRET,
 };
