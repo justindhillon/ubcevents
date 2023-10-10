@@ -3,6 +3,7 @@ import type { GetStaticProps } from "next"
 import Layout from "../components/Layout"
 import Post, { PostProps } from "../components/Post"
 import prisma from "../lib/prisma";
+import Footer from "../components/Footer";
 
 export const getStaticProps: GetStaticProps = async () => {
   const feed = await prisma.post.findMany({
@@ -44,6 +45,7 @@ const UpcomingEvents: React.FC<Props> = (props) => {
             </div>
           ))}
         </main>
+        <Footer />
       </div>
       <style jsx>{`
         .post {

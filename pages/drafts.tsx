@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import Post, { PostProps } from "../components/Post";
 import { useSession, getSession } from "next-auth/react";
 import prisma from "../lib/prisma";
+import Footer from "../components/Footer";
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const session = await getSession({ req });
@@ -55,6 +56,7 @@ const Drafts: React.FC<Props> = (props) => {
             </div>
           ))}
         </main>
+        <Footer />
       </div>
       <style jsx>{`
         .post {
