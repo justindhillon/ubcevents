@@ -3,6 +3,7 @@ import type { GetStaticProps } from "next"
 import Layout from "../components/Layout"
 import Post, { PostProps } from "../components/Post"
 import prisma from "../lib/prisma";
+import { useSession } from "next-auth/react";
 
 export const getStaticProps: GetStaticProps = async () => {
   const feed = await prisma.post.findMany({
@@ -24,6 +25,22 @@ type Props = {
 }
 
 const Moderation: React.FC<Props> = (props) => {
+  const {data: session, status} = useSession();
+
+  async function validatePost(id: string): Promise<void> {
+    await fetch(`/api/publish/${id}`, {
+      method: "PUT",
+    });
+    await Router.push("/moderation");
+  }
+  
+  async function deletePost(id: string): Promise<void> {
+    await fetch(`/api/post/${id}`, {
+      method: "DELETE",
+    });
+    await Router.push("/moderation");
+  }
+
   return (
     <Layout>
       <div className="page">
@@ -32,6 +49,16 @@ const Moderation: React.FC<Props> = (props) => {
           {props.feed.map((post) => (
             <div key={post.id} className="post">
               <Post post={post} />
+              { session?.user.moderator &&
+                <div>
+                  <button onClick={() => validatePost(post.id)}>
+                    <a>✅</a>
+                  </button>
+                  <button onClick={() => deletePost(post.id)}>
+                    <a>❌</a>
+                  </button>
+                </div>
+              }
             </div>
           ))}
         </main>
