@@ -27,8 +27,8 @@ type Props = {
 const Moderation: React.FC<Props> = (props) => {
   const {data: session, status} = useSession();
 
-  async function validatePost(id: string): Promise<void> {
-    await fetch(`/api/publish/${id}`, {
+  async function moderatePost(id: string): Promise<void> {
+    await fetch(`/api/moderate/${id}`, {
       method: "PUT",
     });
     await Router.push("/moderation");
@@ -51,7 +51,7 @@ const Moderation: React.FC<Props> = (props) => {
               <Post post={post} />
               { session?.user.moderator &&
                 <div className="button-container">
-                  <button onClick={() => validatePost(post.id)}>
+                  <button onClick={() => moderatePost(post.id)}>
                     <a>✅</a>
                   </button>
                   <button onClick={() => deletePost(post.id)}>
