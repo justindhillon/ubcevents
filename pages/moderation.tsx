@@ -8,7 +8,7 @@ import Router from "next/router";
 
 export const getStaticProps: GetStaticProps = async () => {
   const feed = await prisma.post.findMany({
-    where: { published: true },
+    where: { published: true, moderated: false },
     include: {
       author: {
         select: { name: true },
