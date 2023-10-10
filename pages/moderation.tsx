@@ -27,7 +27,7 @@ const Moderation: React.FC<Props> = (props) => {
   return (
     <Layout>
       <div className="page">
-        <h1>Upcoming Events</h1>
+        <h1>Moderation</h1>
         <main>
           {props.feed.map((post) => (
             <div key={post.id} className="post">
