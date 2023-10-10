@@ -50,7 +50,7 @@ const Moderation: React.FC<Props> = (props) => {
             <div key={post.id} className="post">
               <Post post={post} />
               { session?.user.moderator &&
-                <div class="button-container">
+                <div className="button-container">
                   <button onClick={() => validatePost(post.id)}>
                     <a>✅</a>
                   </button>
