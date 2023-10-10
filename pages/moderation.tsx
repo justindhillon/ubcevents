@@ -91,11 +91,11 @@ const Moderation: React.FC<Props> = (props) => {
           border-radius: 0.125rem;
           padding: 2rem 4rem;
           flex-grow: 10;
+          margin-bottom: 4rem;
         }
 
         button + button {
           margin-left: 2rem;
-          margin-bottom: 4rem;
         }
       `}</style>
     </Layout>
