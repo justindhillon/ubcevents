@@ -92,6 +92,7 @@ const Moderation: React.FC<Props> = (props) => {
           padding: 1rem 4rem;
           margin: 1rem;
           margin-bottom: 4rem;
+          flex-grow: 10;
         }
       `}</style>
     </Layout>
