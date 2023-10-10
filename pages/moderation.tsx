@@ -4,6 +4,7 @@ import Layout from "../components/Layout"
 import Post, { PostProps } from "../components/Post"
 import prisma from "../lib/prisma";
 import { useSession } from "next-auth/react";
+import Router from "next/router";
 
 export const getStaticProps: GetStaticProps = async () => {
   const feed = await prisma.post.findMany({
