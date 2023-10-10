@@ -19,7 +19,7 @@ const options = {
       session.user.moderator = user.moderator
       return session
     }
-  }
+  },
   adapter: PrismaAdapter(prisma),
   secret: process.env.SECRET,
 };
