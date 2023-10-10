@@ -17,6 +17,7 @@ const options = {
   ],
   callbacks: {
     session({ session, user }) {
+      console.log(user.moderator);
       session.user.moderator = user.moderator
       return session
     }
