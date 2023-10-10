@@ -94,7 +94,7 @@ const Moderation: React.FC<Props> = (props) => {
         }
 
         button + button {
-          margin-left: 1rem;
+          margin-left: 2rem;
           margin-bottom: 4rem;
         }
       `}</style>
