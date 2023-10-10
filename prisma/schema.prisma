@@ -16,6 +16,7 @@ model Post {
   content   String?
   eventDate String?
   published Boolean @default(false)
+  moderated Boolean @default(false)
   author    User?   @relation(fields: [authorId], references: [id])
   authorId  String?
 }

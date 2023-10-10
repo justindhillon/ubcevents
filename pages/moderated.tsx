@@ -6,7 +6,7 @@ import prisma from "../lib/prisma";
 
 export const getStaticProps: GetStaticProps = async () => {
   const feed = await prisma.post.findMany({
-    where: { published: true, moderated: true },
+    where: { published: true },
     include: {
       author: {
         select: { name: true },
@@ -23,16 +23,7 @@ type Props = {
   feed: PostProps[]
 }
 
-const UpcomingEvents: React.FC<Props> = (props) => {
-  // Sort feed by which ones are comming up soonest
-  props.feed.sort((a, b) => {
-    let dateA = new Date(a.eventDate);
-    let dateB = new Date(b.eventDate);
-    if (dateA < dateB) {
-      return -1;
-    }
-  });
-
+const Moderation: React.FC<Props> = (props) => {
   return (
     <Layout>
       <div className="page">
@@ -63,4 +54,4 @@ const UpcomingEvents: React.FC<Props> = (props) => {
   )
 }
 
-export default UpcomingEvents
+export default Moderation
