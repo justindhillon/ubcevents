@@ -57,7 +57,6 @@ const Moderation: React.FC<Props> = (props) => {
                   <button onClick={() => deletePost(post.id)}>
                     <a>❌</a>
                   </button>
-                  <br />
                 </div>
               }
             </div>
@@ -90,6 +89,7 @@ const Moderation: React.FC<Props> = (props) => {
           border-radius: 0.125rem;
           padding: 1rem 4rem;
           margin: 1rem;
+          margin-bottom: 4rem;
         }
       `}</style>
     </Layout>
