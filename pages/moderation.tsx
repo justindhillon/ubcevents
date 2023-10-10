@@ -88,8 +88,8 @@ const Moderation: React.FC<Props> = (props) => {
           background: #ececec;
           border: 0;
           border-radius: 0.125rem;
-          padding: 1rem 4rem;
-          margin: 1rem;
+          padding: 2rem 4rem;
+          margin: 2rem;
           margin-bottom: 4rem;
           flex-grow: 10;
         }
