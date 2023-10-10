@@ -10,6 +10,8 @@ const Header: React.FC = () => {
 
   const {data: session, status} = useSession();
 
+  console.log(session?.user.moderator);
+
   let left = (
     <div className="left">
       <Link href="/">
