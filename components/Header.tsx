@@ -152,9 +152,11 @@ const Header: React.FC = () => {
     );
     right = (
       <div className="right">
-        <p>
-          {session.user.name} ({session.user.email})
-        </p>
+        { $(window).width() < 768 &&
+          <p>
+            {session.user.name} ({session.user.email})
+          </p>
+        }
         <Link href="/create">
           <button>
             <a>New post</a>
