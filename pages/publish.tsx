@@ -9,7 +9,7 @@ const Publish: React.FC<Props> = (props) => {
         <main>
             <small>The post is under moderation. After somone has verified the post, it will come up on the feed. This may take 1-2 days.</small>
             <br /><br />
-            <p>Back to <a href="http://184.65.65.217/"><span style={{color:"#2596be"}}>Feed</span></a></p>
+            <p>Back to <a href="https://ubcevents.com/"><span style={{color:"#2596be"}}>Feed</span></a></p>
         </main>
       </div>
     </Layout>
