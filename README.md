@@ -1,6 +1,6 @@
-# [UBCEvents](https://ubcevents.vercel.app/)
+# [UBCEvents](https://ubcevents.com/)
 
-This is the source code for https://ubcevents.vercel.app/.
+This is the source code for ubcevents.com
 - Next.js as the React framework
 - Next.js API Routes for server-side API routes as the backend
 - Prisma as the ORM for migrations and database access
