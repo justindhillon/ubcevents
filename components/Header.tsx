@@ -152,7 +152,7 @@ const Header: React.FC = () => {
     );
     right = (
       <div className="right">
-        { $(window).width() < 768 &&
+        { window.width < 768 &&
           <p>
             {session.user.name} ({session.user.email})
           </p>
