@@ -191,12 +191,12 @@ const Header: React.FC = () => {
           }
 
           .username {
-            display: block;
+            display: none;
           }
 
           @media screen and (min-width: 768px) {
             .username { 
-              display: none; 
+              display: block; 
             }
           }
 
