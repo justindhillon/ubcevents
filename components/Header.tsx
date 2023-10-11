@@ -152,11 +152,9 @@ const Header: React.FC = () => {
     );
     right = (
       <div className="right">
-        { window.innerWidth > 768 &&
-          <p>
-            {session.user.name} ({session.user.email})
-          </p>
-        }
+        <p className="username">
+          {session.user.name} ({session.user.email})
+        </p>
         <Link href="/create">
           <button>
             <a>New post</a>
@@ -190,6 +188,16 @@ const Header: React.FC = () => {
             border: 1px solid black;
             padding: 0.5rem 1rem;
             border-radius: 3px;
+          }
+
+          .username {
+            display: block;
+          }
+
+          @media screen and (min-width: 768px) {
+            .username { 
+              display: none; 
+            }
           }
 
           button {
