@@ -196,7 +196,7 @@ const Header: React.FC = () => {
 
           @media screen and (min-width: 768px) {
             .username { 
-              display: block; 
+              display: inline; 
             }
           }
 
