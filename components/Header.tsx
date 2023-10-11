@@ -215,7 +215,7 @@ const Header: React.FC = () => {
       <style jsx>{`
         nav {
           display: flex;
-          padding: 1rem;
+          padding: 2rem;
           align-items: center;
         }
       `}</style>
