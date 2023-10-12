@@ -130,17 +130,19 @@ const AboutMe: React.FC = () => {
                     align-items: center;
                 }
 
+                @media screen and (max-width: 512px) {
+                    .links {
+                        grid-template-rows: repeat(3, 1fr);
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+
                 @media screen and (max-width: 768px) {
                     main {
                         -webkit-flex-direction: column;
                         flex-direction: column;
                         padding: 0.5rem;
                         padding-top: 2.5rem;
-                    }
-                    
-                    .links {
-                        grid-template-rows: repeat(3, 1fr);
-                        grid-template-columns: repeat(2, 1fr);
                     }
                 }
 
