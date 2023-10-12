@@ -64,12 +64,13 @@ const Draft: React.FC = () => {
             value={eventDate}
           /> *
           <br /><br />
-          <label for="appt">Select a time:</label>
+          <label for="appt">Select a time:  </label>
           <input 
             type="time" 
             onChange={(e) => setStartTime(e.target.value)}
             value={startTime}
-          /> - 
+          /> 
+          <text>  -  </text>
           <input 
             type="time" 
             onChange={(e) => setEndTime(e.target.value)}
