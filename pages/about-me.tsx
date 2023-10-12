@@ -29,7 +29,8 @@ const AboutMe: React.FC = () => {
                         I never knew what events were going on at UBC, so I made this! 
                         ubcevents.com lets ubc students post all their events in one place! 
                         ubcevents.com is made to give you the best university experience! 
-                        Keeping you in the loop, and on top of everything UBC!</p>
+                        Keeping you in the loop, and on top of everything UBC!
+                    </p>
                 </div>
             </main>
             <div style={{textAlign:"center"}}>
