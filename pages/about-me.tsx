@@ -15,10 +15,10 @@ const AboutMe: React.FC = () => {
         <div className="page">
             <h1>About Me</h1>
             <main>
-                <div className="column" style="background-color:#aaa;">
+                <div className="column">
                     Column
                 </div>
-                <div className="column" style="background-color:#bbb;">
+                <div className="column">
                     <p>About Me</p>
                 </div>
             </main>
