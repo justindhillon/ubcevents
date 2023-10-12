@@ -21,7 +21,7 @@ const AboutMe: React.FC = () => {
                     alt="Picture of the author"
                 />
                 </div>
-                <div className="column" style={{ textAlign:"center" }}>
+                <div className="column" style={{ textAlign:"left" }}>
                     <p>Welcome to my corner of the internet! 
                         I'm Justin Dhillon, and I'm delighted that you've dropped by. 
                         I’m a UBC computer science student with a deep love for solving problems. 
