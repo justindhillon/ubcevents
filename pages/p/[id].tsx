@@ -50,6 +50,10 @@ const Post: React.FC<PostProps> = (props) => {
     title = `${title} (Draft)`;
   }
 
+  const dateObj = new Date(props?.eventDate);
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = dateObj.toLocaleDateString('en-US', options);
+
   return (
     <Layout>
       <Head>
@@ -61,6 +65,9 @@ const Post: React.FC<PostProps> = (props) => {
         <small>{props?.eventDate}</small>
         <p>By {props?.author?.name || "Unknown author"}</p>
         <ReactMarkdown children={props.content} />
+        <p>📅 {formattedDate}</p>
+        <p>⏰ {props?.eventDate}</p>
+        {props?.location && <p>📍 {props?.location}</p>}
         {!props.published && userHasValidSession && postBelongsToUser && (
           <button onClick={() => publishPost(props.id)}>Publish</button>
         )}

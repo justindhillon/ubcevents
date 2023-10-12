@@ -14,17 +14,44 @@ export type PostProps = {
   published: boolean;
 };
 
+function convertTime(time) {
+  const timeParts = time.split(':');
+  let hours = parseInt(timeParts[0], 10);
+  const minutes = timeParts[1];
+
+  const period = hours >= 12 ? 'PM' : 'AM';
+  if (hours > 12) {
+    hours -= 12;
+  }
+
+  const formattedTime = hours + ':' + minutes + ' ' + period;
+
+  return formattedTime;
+}
+
 const Post: React.FC<{ post: PostProps }> = ({ post }) => {
   const dateObj = new Date(post.eventDate);
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   const formattedDate = dateObj.toLocaleDateString('en-US', options);
+
+  let time = "";
+
+  if (post.startTime) {
+    const startTime = convertTime(post.startTime);
+    time += startTime;
+  }
+  
+  if (post.endTime) {
+    const endTime = convertTime(post.endTime);
+    time += " - " + endTime
+  }
 
   return (
     <div onClick={() => Router.push("/p/[id]", `/p/${post.id}`)}>
       <h2>{post.title}</h2>
       <ReactMarkdown children={post.content} />
       <p>📅 {formattedDate}</p>
-      <p>⏰ {post.eventDate}</p>
+      {time && <p>{time}</p>}
       {post.location && <p>📍 {post.location}</p>}
       <style jsx>{`
         div {
