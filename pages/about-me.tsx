@@ -41,7 +41,7 @@ const AboutMe: React.FC = () => {
                     <div className="center">
                         <a href="https://github.com/justindhillon" target="_blank">
                             <Image
-                                src="/images/icons/instagram.png"
+                                src="/images/icons/instagram.jpg"
                                 width={128}
                                 height={128}
                                 alt="Instagram"
