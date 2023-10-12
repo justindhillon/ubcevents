@@ -63,25 +63,9 @@ const Links: React.FC = () => {
                     transition: box-shadow 0.1s ease-in;
                     display: -webkit-flex;
                     display: flex;
-                }
-
-                .column {
-                    -webkit-flex: 1;
-                    -ms-flex: 1;
-                    flex: 1;
-                    padding: 2rem;
-                    padding-top: 0rem;
+                    justify-content: center;
+                    align-items: center;
                     text-align: center;
-                    margin: auto;
-                }
-
-                .circle {
-                    border-radius: 50%;
-                }
-
-                .text-block {
-                    text-align: left;
-                    font-size: 1.5rem;
                 }
 
                 .links {
@@ -114,12 +98,6 @@ const Links: React.FC = () => {
                         flex-direction: column;
                         padding: 0.5rem;
                         padding-top: 2.5rem;
-                    }
-                }
-
-                @media screen and (max-width: 1024px) {
-                    .text-block {
-                        font-size: 1rem;
                     }
                 }
             `}</style>
