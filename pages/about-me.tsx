@@ -22,7 +22,7 @@ const AboutMe: React.FC = () => {
                         className="profile"
                     />
                 </div>
-                <div className="column" style={{ textAlign:"left" }}>
+                <div className="text-block">
                     <p>Welcome to my corner of the internet! 
                         I'm Justin Dhillon, and I'm delighted that you've dropped by. 
                         I’m a UBC computer science student with a deep love for solving problems. 
@@ -46,6 +46,15 @@ const AboutMe: React.FC = () => {
                 transition: box-shadow 0.1s ease-in;
                 display: -webkit-flex;
                 display: flex;
+            }
+
+            .text-block {
+                -webkit-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+                padding: 10px;
+                text-align: left;
+                max-width: 500px;
             }
 
             .column {
