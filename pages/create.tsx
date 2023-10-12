@@ -65,7 +65,7 @@ const Draft: React.FC = () => {
             value={eventDate}
           /> *
           <br /><br />
-          <label for="appt">Select a time:  </label>
+          <label>Select a time:  </label>
           <input 
             type="time" 
             onChange={(e) => setStartTime(e.target.value)}
