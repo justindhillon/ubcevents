@@ -168,7 +168,6 @@ const Header: React.FC = () => {
             text-decoration: none;
             color: #000;
             display: inline-block;
-            background: rgba(0, 0, 0, 0.05);
           }
 
           p {
