@@ -186,7 +186,7 @@ const Header: React.FC = () => {
 
           .right a {
             border: 1px solid black;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 0.5rem;
             border-radius: 3px;
           }
 
