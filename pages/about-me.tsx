@@ -19,6 +19,7 @@ const AboutMe: React.FC = () => {
                             width={1000}
                             height={1000}
                             alt="Picture of the author"
+                            className={"circle"}
                         />
                     </div>
                     <div className="column">
@@ -115,6 +116,10 @@ const AboutMe: React.FC = () => {
                     margin: auto;
                 }
 
+                .circle {
+                    border-radius: 50%;
+                }
+
                 .text-block {
                     text-align: left;
                     font-size: 1.5rem;
@@ -122,7 +127,7 @@ const AboutMe: React.FC = () => {
 
                 .links {
                     width: 100%;
-                    max-width: 10rem;
+                    max-width: 32rem;
                     display: grid;
                     grid-template-rows: repeat(2, 1fr);
                     grid-template-columns: repeat(3, 1fr);
