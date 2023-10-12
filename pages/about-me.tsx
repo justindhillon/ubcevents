@@ -122,6 +122,7 @@ const AboutMe: React.FC = () => {
 
                 .links {
                     width: 100%;
+                    max-width: 10rem;
                     display: grid;
                     grid-template-rows: repeat(2, 1fr);
                     grid-template-columns: repeat(3, 1fr);
