@@ -4,10 +4,6 @@ import Head from 'next/head';
 import Image from 'next/image';
 
 const AboutMe: React.FC = () => {
-    const handleClick = (url) => {
-        window.open(url, '_blank');
-    };
-
     return (
         <Layout>
             <Head>
