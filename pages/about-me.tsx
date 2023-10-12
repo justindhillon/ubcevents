@@ -53,7 +53,7 @@ const AboutMe: React.FC = () => {
 
             .text-block {
                 text-align: left;
-                text-size: 1.5rem;
+                font-size: 1.5rem;
             }
 
             .column {
@@ -79,7 +79,7 @@ const AboutMe: React.FC = () => {
                 }
 
                 .text-block {
-                    text-size: 1rem;
+                    font-size: 1rem;
                 }
             }
         `}</style>
