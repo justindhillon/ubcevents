@@ -64,6 +64,7 @@ const AboutMe: React.FC = () => {
 
             .profile {
                 border-radius: 50%;
+                text-align: right;
             }
 
             @media screen and (max-width: 768px) {
