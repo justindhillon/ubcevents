@@ -13,12 +13,13 @@ const AboutMe: React.FC = () => {
         <div className="page">
             <h1>About Me</h1>
             <main>
-                <div className="column" style={{ borderRadius:"50%" }}>
+                <div className="column">
                 <Image
                     src="/images/profile.jpg"
                     width={500}
                     height={500}
                     alt="Picture of the author"
+                    style={{ borderRadius:"50%" }}
                 />
                 </div>
                 <div className="column" style={{ textAlign:"left" }}>
