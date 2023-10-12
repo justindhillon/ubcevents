@@ -53,6 +53,7 @@ const AboutMe: React.FC = () => {
 
             .text-block {
                 text-align: left;
+                text-size: 24px;
             }
 
             .column {
@@ -75,6 +76,10 @@ const AboutMe: React.FC = () => {
                   flex-direction: column;
                   padding: 0.5rem;
                   padding-top: 2.5rem;
+                }
+
+                .text-block {
+                    text-size: 16px;
                 }
             }
         `}</style>
