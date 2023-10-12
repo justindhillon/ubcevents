@@ -35,6 +35,17 @@ const AboutMe: React.FC = () => {
                     </p>
                 </div>
             </main>
+            <br />
+            <main>
+                <div className="center">
+                    <a herf="https://github.com/justindhillon"><button className=".button">Image</button></a>
+                    <a herf="https://twitter.com/justindhillon0"><button className=".button">Image</button></a>
+                    <a herf="https://www.linkedin.com/in/justin-dhillon-5b0780295/"><button className=".button">Image</button></a>
+                    <a herf="https://github.com/justindhillon/ubcevents"><button className=".button">Image</button></a>
+                    <a herf="https://mail.google.com/mail/?view=cm&fs=1&to=justin.singh.dhillon@gmail.com"><button className=".button">Image</button></a>
+                    <a herf="https://www.instagram.com/ubc_events/"><button className=".button">Image</button></a>
+                </div>
+            </main>
             <div style={{textAlign:"center"}}>
                 <br /><br />
                 <p>Back to <a href="/"><span style={{color:"#2596be"}}>Feed</span></a></p>
@@ -51,11 +62,6 @@ const AboutMe: React.FC = () => {
                 display: flex;
             }
 
-            .text-block {
-                text-align: left;
-                font-size: 1.5rem;
-            }
-
             .column {
                 -webkit-flex: 1;
                 -ms-flex: 1;
@@ -69,6 +75,38 @@ const AboutMe: React.FC = () => {
             .profile {
                 border-radius: 50%;
             }
+
+            .text-block {
+                text-align: left;
+                font-size: 1.5rem;
+            }
+
+            .center {
+                margin: auto;
+            }
+
+            .button {
+                background-color: rgba(51, 51, 51, 0.05);
+                border-radius: 8px;
+                border-width: 0;
+                color: #333333;
+                cursor: pointer;
+                display: inline-block;
+                font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 20px;
+                list-style: none;
+                margin: 0;
+                padding: 10px 12px;
+                text-align: center;
+                transition: all 200ms;
+                vertical-align: baseline;
+                white-space: nowrap;
+                user-select: none;
+                -webkit-user-select: none;
+                touch-action: manipulation;
+              }
 
             @media screen and (max-width: 768px) {
                 main {
