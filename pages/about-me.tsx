@@ -17,13 +17,6 @@ const AboutMe: React.FC = () => {
         <main>
             <h2>About Me</h2>
             <p>About Me</p>
-            <style jsx>{`
-                main {
-                    background: white;
-                    padding: 2rem;
-                    transition: box-shadow 0.1s ease-in;
-                }
-            `}</style>
         </main>
         <div style={{textAlign:"center"}}>
             <br /><br />
