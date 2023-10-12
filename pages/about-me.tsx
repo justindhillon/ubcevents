@@ -59,7 +59,7 @@ const AboutMe: React.FC = () => {
                 border-radius: 50%;
             }
 
-            @media (max-width: 600px) {
+            @media screen and (min-width: 768px) {
                 .row {
                   -webkit-flex-direction: column;
                   flex-direction: column;
