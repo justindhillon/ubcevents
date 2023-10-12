@@ -1,6 +1,4 @@
 import React from "react"
-import Layout from "../components/Layout"
-import Head from 'next/head';
 import Image from 'next/image';
 
 const Links: React.FC = () => {
