@@ -120,17 +120,17 @@ const AboutMe: React.FC = () => {
                 }
 
                 .links {
-                    margin: auto;
+                    display: flex;
                     flex-wrap: wrap;
                     justify-content: space-evenly;
                 }
 
                 @media screen and (max-width: 768px) {
                     main {
-                    -webkit-flex-direction: column;
-                    flex-direction: column;
-                    padding: 0.5rem;
-                    padding-top: 2.5rem;
+                        -webkit-flex-direction: column;
+                        flex-direction: column;
+                        padding: 0.5rem;
+                        padding-top: 2.5rem;
                     }
                 }
 
