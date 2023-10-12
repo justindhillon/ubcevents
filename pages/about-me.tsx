@@ -44,7 +44,7 @@ const AboutMe: React.FC = () => {
             main {
                 background: white;
                 padding: 2rem;
-                padding-top: 3rem;
+                padding-top: 4rem;
                 transition: box-shadow 0.1s ease-in;
                 display: -webkit-flex;
                 display: flex;
@@ -59,7 +59,7 @@ const AboutMe: React.FC = () => {
                 -ms-flex: 1;
                 flex: 1;
                 padding: 2rem;
-                padding-top: 1rem;
+                padding-top: 0rem;
                 text-align: center;
                 margin: auto;
             }
@@ -72,6 +72,8 @@ const AboutMe: React.FC = () => {
                 main {
                   -webkit-flex-direction: column;
                   flex-direction: column;
+                  padding: 1rem;
+                  padding-top: 2rem;
                 }
             }
         `}</style>
