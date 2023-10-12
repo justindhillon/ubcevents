@@ -122,9 +122,9 @@ const AboutMe: React.FC = () => {
 
                 .links {
                     width: 100%;
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-evenly;
+                    display: grid;
+                    grid-template-rows: repeat(3, 1fr);
+                    grid-template-columns: repeat(2, 1fr);
                 }
 
                 @media screen and (max-width: 768px) {
