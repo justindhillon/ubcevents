@@ -55,7 +55,6 @@ const Post: React.FC<PostProps> = (props) => {
       <Head>
         <title>{title}</title>
         <meta property="description" content={props.content} />
-        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <div>
         <h2>{title}</h2>

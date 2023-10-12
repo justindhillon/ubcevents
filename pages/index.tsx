@@ -40,7 +40,6 @@ const UpcomingEvents: React.FC<Props> = (props) => {
       <Head>
         <title>UBC Events</title>
         <meta property="description" content="Everything UBC" />
-        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <div className="page">
         <h1>Upcoming Events</h1>
