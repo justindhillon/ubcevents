@@ -72,8 +72,8 @@ const AboutMe: React.FC = () => {
                 main {
                   -webkit-flex-direction: column;
                   flex-direction: column;
-                  padding: 1rem;
-                  padding-top: 3rem;
+                  padding: 0.5rem;
+                  padding-top: 2rem;
                 }
             }
         `}</style>
