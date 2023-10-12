@@ -37,7 +37,7 @@ const Draft: React.FC = () => {
         <form onSubmit={submitData}>
           <h1>New Draft</h1>
           <input
-            maxlength="200"
+            maxlength="150"
             autoFocus
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Title *"
@@ -53,7 +53,7 @@ const Draft: React.FC = () => {
             value={content}
           />
           <input
-            maxlength="200"
+            maxlength="150"
             autoFocus
             onChange={(e) => setLocation(e.target.value)}
             placeholder="Location"
