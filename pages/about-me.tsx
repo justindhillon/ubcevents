@@ -86,6 +86,7 @@ const AboutMe: React.FC = () => {
                                 alt="Instagram"
                             />
                         </a>
+                        <br />
                     </div>
                 </main>
                 <div style={{textAlign:"center"}}>
