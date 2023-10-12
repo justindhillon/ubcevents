@@ -19,7 +19,7 @@ const AboutMe: React.FC = () => {
                     width={500}
                     height={500}
                     alt="Picture of the author"
-                    style={{ borderRadius:"50%" }}
+                    className="profile"
                 />
                 </div>
                 <div className="column" style={{ textAlign:"left" }}>
@@ -55,7 +55,7 @@ const AboutMe: React.FC = () => {
                 text-align: center;
             }
 
-            img {
+            .profile {
                 border-radius: 50%;
             }
 
