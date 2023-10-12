@@ -128,6 +128,12 @@ const AboutMe: React.FC = () => {
                     grid-row-gap: 1rem;
                     justify-content: center;
                     align-items: center;
+                    text-align: center;
+                }
+
+                .links a {
+                    margin-left: auto;
+                    margin-right: auto;
                 }
 
                 @media screen and (max-width: 512px) {
