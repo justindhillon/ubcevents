@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import Post, { PostProps } from "../components/Post";
 import { useSession, getSession } from "next-auth/react";
 import prisma from "../lib/prisma";
+import Head from 'next/head'
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const session = await getSession({ req });
@@ -46,6 +47,10 @@ const Drafts: React.FC<Props> = (props) => {
 
   return (
     <Layout>
+      <Head>
+        <title>UBC Events - Drafts</title>
+        <meta property="description" content="Your drafts" />
+      </Head>
       <div className="page">
         <h1>My Drafts</h1>
         <main>

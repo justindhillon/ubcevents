@@ -6,6 +6,7 @@ import Router from "next/router";
 import { PostProps } from "../../components/Post";
 import { useSession } from "next-auth/react";
 import prisma from "../../lib/prisma";
+import Head from 'next/head'
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const post = await prisma.post.findUnique({
@@ -51,6 +52,10 @@ const Post: React.FC<PostProps> = (props) => {
 
   return (
     <Layout>
+      <Head>
+        <title>{title}</title>
+        <meta property="description" content={props.content} />
+      </Head>
       <div>
         <h2>{title}</h2>
         <small>{props?.eventDate}</small>

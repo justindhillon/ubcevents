@@ -5,6 +5,7 @@ import Post, { PostProps } from "../components/Post"
 import prisma from "../lib/prisma";
 import { useSession } from "next-auth/react";
 import Router from "next/router";
+import Head from 'next/head'
 
 export const getStaticProps: GetStaticProps = async () => {
   const feed = await prisma.post.findMany({
@@ -44,6 +45,10 @@ const Moderation: React.FC<Props> = (props) => {
 
   return (
     <Layout>
+      <Head>
+        <title>UBC Events - Moderation</title>
+        <meta property="description" content="Moderation page" />
+      </Head>
       <div className="page">
         <h1>Moderation</h1>
         <main>

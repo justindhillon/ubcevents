@@ -4,6 +4,7 @@ import Layout from "../components/Layout"
 import Post, { PostProps } from "../components/Post"
 import prisma from "../lib/prisma";
 import Footer from "../components/Footer";
+import Head from 'next/head'
 
 export const getStaticProps: GetStaticProps = async () => {
   const feed = await prisma.post.findMany({
@@ -36,6 +37,10 @@ const UpcomingEvents: React.FC<Props> = (props) => {
 
   return (
     <Layout>
+      <Head>
+        <title>UBC Events</title>
+        <meta property="description" content="Everything UBC" />
+      </Head>
       <div className="page">
         <h1>Upcoming Events</h1>
         <main>
