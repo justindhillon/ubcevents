@@ -56,14 +56,13 @@ const AboutMe: React.FC = () => {
                 -webkit-flex: 1;
                 -ms-flex: 1;
                 flex: 1;
-                padding: 10px;
+                padding: 2em;
                 text-align: center;
                 margin: auto;
             }
 
             .profile {
                 border-radius: 50%;
-                text-align: right;
             }
 
             @media screen and (max-width: 768px) {
