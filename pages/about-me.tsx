@@ -44,19 +44,22 @@ const AboutMe: React.FC = () => {
             main {
                 background: white;
                 padding: 2rem;
+                padding-top: 3rem;
                 transition: box-shadow 0.1s ease-in;
                 display: -webkit-flex;
                 display: flex;
             }
 
             .text-block {
+                text-align: left;
             }
 
             .column {
                 -webkit-flex: 1;
                 -ms-flex: 1;
                 flex: 1;
-                padding: 2em;
+                padding: 2rem;
+                padding-top: 1rem
                 text-align: center;
                 margin: auto;
             }
