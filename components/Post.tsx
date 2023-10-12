@@ -51,7 +51,7 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
       <h2>{post.title}</h2>
       <ReactMarkdown children={post.content} />
       <p>📅 {formattedDate}</p>
-      {time && <p>{time}</p>}
+      {time && <p>⏰ {time}</p>}
       {post.location && <p>📍 {post.location}</p>}
       <style jsx>{`
         div {
