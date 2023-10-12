@@ -16,8 +16,8 @@ const AboutMe: React.FC = () => {
                 <div className="column">
                     <Image
                         src="/images/profile.jpg"
-                        width={500}
-                        height={500}
+                        width={1000}
+                        height={1000}
                         alt="Picture of the author"
                         className="profile"
                     />
@@ -50,7 +50,6 @@ const AboutMe: React.FC = () => {
             }
 
             .text-block {
-                max-width: 500px;
             }
 
             .column {
