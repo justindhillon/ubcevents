@@ -2,7 +2,6 @@ import React from "react"
 import Layout from "../components/Layout"
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
 
 const AboutMe: React.FC = () => {
     const handleClick = (url) => {
@@ -44,12 +43,12 @@ const AboutMe: React.FC = () => {
                 <br />
                 <main>
                     <div className="center">
-                        <button className="button" onClick={handleClick("https://github.com/justindhillon")}>1</button>
-                        <button className="button" onClick={handleClick("https://twitter.com/justindhillon0")}>2</button>
-                        <button className="button" onClick={handleClick("https://www.linkedin.com/in/justin-dhillon-5b0780295/")}>3</button>
-                        <button className="button" onClick={handleClick("https://github.com/justindhillon/ubcevents")}>3</button>
-                        <button className="button" onClick={handleClick("https://mail.google.com/mail/?view=cm&fs=1&to=justin.singh.dhillon@gmail.com")}>3</button>
-                        <button className="button" onClick={handleClick("https://www.instagram.com/ubc_events/")}>3</button>
+                        <a href="https://github.com/justindhillon" target="_blank"><button className="button">1</button></a>
+                        <a href="https://twitter.com/justindhillon0" target="_blank"><button className="button">2</button></a>
+                        <a href="https://www.linkedin.com/in/justin-dhillon-5b0780295/" target="_blank"><button className="button">3</button></a>
+                        <a href="https://github.com/justindhillon/ubcevents" target="_blank"><button className="button">4</button></a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=justin.singh.dhillon@gmail.com" target="_blank"><button className="button">5</button></a>
+                        <a href="https://www.instagram.com/ubc_events/" target="_blank"><button className="button">6</button></a>
                     </div>
                 </main>
                 <div style={{textAlign:"center"}}>
