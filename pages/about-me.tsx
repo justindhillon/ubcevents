@@ -4,9 +4,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 
 const AboutMe: React.FC = () => {
-    const router = useRouter();
-
-    const handleClick = ({ link }) => {
+    const handleClick = (link) => {
         window.open(
             { link },
             '_blank' // <- This is what makes it open in a new window.
@@ -44,6 +42,7 @@ const AboutMe: React.FC = () => {
                         </p>
                     </div>
                 </main>
+                <br />
                 <br />
                 <main>
                     <div className="center">
