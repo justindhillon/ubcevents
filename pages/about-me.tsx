@@ -41,17 +41,52 @@ const AboutMe: React.FC = () => {
                     <div className="center">
                         <a href="https://github.com/justindhillon" target="_blank" className="icon">
                             <Image
+                                src="/images/icons/github.jpg"
+                                width={128}
+                                height={128}
+                                alt="Github"
+                            />
+                        </a>
+                        <a href="https://twitter.com/justindhillon0" target="_blank" className="icon">
+                            <Image
+                                src="/images/icons/instagram.jpg"
+                                width={128}
+                                height={128}
+                                alt="Twitter"
+                            />
+                        </a>
+                        <a href="https://www.linkedin.com/in/justin-dhillon-5b0780295/" target="_blank" className="icon">
+                            <Image
+                                src="/images/icons/instagram.jpg"
+                                width={128}
+                                height={128}
+                                alt="Linkedin"
+                            />
+                        </a>
+                        <a href="https://github.com/justindhillon/ubcevents" target="_blank" className="icon">
+                            <Image
+                                src="/images/icons/instagram.jpg"
+                                width={128}
+                                height={128}
+                                alt="Source"
+                            />
+                        </a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=justin.singh.dhillon@gmail.com" target="_blank" className="icon">
+                            <Image
+                                src="/images/icons/instagram.jpg"
+                                width={128}
+                                height={128}
+                                alt="Gmail"
+                            />
+                        </a>
+                        <a href="https://www.instagram.com/ubc_events/" target="_blank" className="icon">
+                            <Image
                                 src="/images/icons/instagram.jpg"
                                 width={128}
                                 height={128}
                                 alt="Instagram"
                             />
                         </a>
-                        <a href="https://twitter.com/justindhillon0" target="_blank"><button className="button">2</button></a>
-                        <a href="https://www.linkedin.com/in/justin-dhillon-5b0780295/" target="_blank"><button className="button">3</button></a>
-                        <a href="https://github.com/justindhillon/ubcevents" target="_blank"><button className="button">4</button></a>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=justin.singh.dhillon@gmail.com" target="_blank"><button className="button">5</button></a>
-                        <a href="https://www.instagram.com/ubc_events/" target="_blank"><button className="button">6</button></a>
                     </div>
                 </main>
                 <div style={{textAlign:"center"}}>
