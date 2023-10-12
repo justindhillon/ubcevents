@@ -2,10 +2,11 @@ import React from "react"
 import Layout from "../components/Layout"
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const AboutMe: React.FC = () => {
     const handleClick = (url) => {
-        Window.open(url, '_blank');
+        window.open(url, '_blank');
     };
 
     return (
