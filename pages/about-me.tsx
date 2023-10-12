@@ -22,8 +22,9 @@ const AboutMe: React.FC = () => {
                         className="profile"
                     />
                 </div>
-                <div className="text-block">
-                    <p>Welcome to my corner of the internet! 
+                <div className="column">
+                    <p className="text-block">
+                        Welcome to my corner of the internet! 
                         I'm Justin Dhillon, and I'm delighted that you've dropped by. 
                         I’m a UBC computer science student with a deep love for solving problems. 
                         I never knew what events were going on at UBC, so I made this! 
@@ -49,10 +50,6 @@ const AboutMe: React.FC = () => {
             }
 
             .text-block {
-                -webkit-flex: 1;
-                -ms-flex: 1;
-                flex: 1;
-                padding: 10px;
                 text-align: left;
                 max-width: 500px;
             }
