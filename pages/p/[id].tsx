@@ -89,7 +89,6 @@ const Post: React.FC<PostProps> = (props) => {
       </Head>
       <div>
         <h2>{title}</h2>
-        <small>{props?.eventDate}</small>
         <p>By {props?.author?.name || "Unknown author"}</p>
         <ReactMarkdown children={props.content} />
         <p>📅 {formattedDate}</p>

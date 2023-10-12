@@ -48,8 +48,8 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
 
   let content = "";
 
-  if (post.content.length > 1000) {
-    content = post.content.slice(0, 1000) + "...";
+  if (post.content.length > 500) {
+    content = post.content.slice(0, 500) + "...";
   } else {
     content = post.content;
   }
