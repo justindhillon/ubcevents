@@ -15,6 +15,9 @@ function generateSiteMap(posts) {
         <url>
             <loc>https://ubcevents.com/api/auth/signin</loc>
         </url>
+        <url>
+            <loc>https://ubcevents.com/about-me</loc>
+        </url>
         ${posts.map(({ id }) => {
             return `
                 <url>

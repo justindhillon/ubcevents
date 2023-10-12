@@ -8,11 +8,15 @@ import Head from 'next/head';
 
 export const getStaticProps: GetStaticProps = async () => {
   const feed = await prisma.post.findMany({
+    take: 10,
     where: { published: true, moderated: true },
     include: {
       author: {
         select: { name: true },
       },
+    },
+    orderBy: {
+      id: 'asc',
     },
   })
   return {
@@ -44,7 +48,7 @@ const UpcomingEvents: React.FC<Props> = (props) => {
       <div className="page">
         <h1>Upcoming Events</h1>
         <main>
-          {props.feed.slice(0, 10).map((post) => (
+          {props.feed.map((post) => (
             <div key={post.id} className="post">
               <Post post={post} />
             </div>
