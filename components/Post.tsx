@@ -46,10 +46,18 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
     time += " - " + endTime
   }
 
+  let content = "";
+
+  if (post.content.length > 1000) {
+    content = post.content.slice(0, 1000) + "...";
+  } else {
+    content = post.content;
+  }
+
   return (
     <div onClick={() => Router.push("/p/[id]", `/p/${post.id}`)}>
       <h2>{post.title}</h2>
-      <ReactMarkdown children={post.content} />
+      <ReactMarkdown children={content} />
       <p>📅 {formattedDate}</p>
       {time && <p>⏰ {time}</p>}
       {post.location && <p>📍 {post.location}</p>}
