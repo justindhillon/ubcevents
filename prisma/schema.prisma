@@ -15,8 +15,8 @@ model Post {
   title     String
   content   String?
   eventDate String?
-  timeStart String?
-  timeEnd   String?
+  startTime String?
+  endTime   String?
   location  String?
   published Boolean @default(false)
   moderated Boolean @default(false)
