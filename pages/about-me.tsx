@@ -19,7 +19,6 @@ const AboutMe: React.FC = () => {
                             width={1000}
                             height={1000}
                             alt="Picture of the author"
-                            className="profile"
                         />
                     </div>
                     <div className="column">
@@ -37,9 +36,9 @@ const AboutMe: React.FC = () => {
                 </main>
                 <br />
                 <br />
-                <main className="links">
-                    <div className="center">
-                        <a href="https://github.com/justindhillon" target="_blank" className="icon">
+                <main>
+                    <div className="links">
+                        <a href="https://github.com/justindhillon" target="_blank">
                             <Image
                                 src="/images/icons/github.jpg"
                                 width={128}
@@ -47,7 +46,7 @@ const AboutMe: React.FC = () => {
                                 alt="Github"
                             />
                         </a>
-                        <a href="https://twitter.com/justindhillon0" target="_blank" className="icon">
+                        <a href="https://twitter.com/justindhillon0" target="_blank">
                             <Image
                                 src="/images/icons/instagram.jpg"
                                 width={128}
@@ -55,7 +54,7 @@ const AboutMe: React.FC = () => {
                                 alt="Twitter"
                             />
                         </a>
-                        <a href="https://www.linkedin.com/in/justin-dhillon-5b0780295/" target="_blank" className="icon">
+                        <a href="https://www.linkedin.com/in/justin-dhillon-5b0780295/" target="_blank">
                             <Image
                                 src="/images/icons/instagram.jpg"
                                 width={128}
@@ -63,7 +62,7 @@ const AboutMe: React.FC = () => {
                                 alt="Linkedin"
                             />
                         </a>
-                        <a href="https://github.com/justindhillon/ubcevents" target="_blank" className="icon">
+                        <a href="https://github.com/justindhillon/ubcevents" target="_blank">
                             <Image
                                 src="/images/icons/instagram.jpg"
                                 width={128}
@@ -71,7 +70,7 @@ const AboutMe: React.FC = () => {
                                 alt="Source"
                             />
                         </a>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=justin.singh.dhillon@gmail.com" target="_blank" className="icon">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=justin.singh.dhillon@gmail.com" target="_blank">
                             <Image
                                 src="/images/icons/instagram.jpg"
                                 width={128}
@@ -79,7 +78,7 @@ const AboutMe: React.FC = () => {
                                 alt="Gmail"
                             />
                         </a>
-                        <a href="https://www.instagram.com/ubc_events/" target="_blank" className="icon">
+                        <a href="https://www.instagram.com/ubc_events/" target="_blank">
                             <Image
                                 src="/images/icons/instagram.jpg"
                                 width={128}
@@ -115,26 +114,15 @@ const AboutMe: React.FC = () => {
                     margin: auto;
                 }
 
-                .profile {
-                    border-radius: 50%;
-                }
-
                 .text-block {
                     text-align: left;
                     font-size: 1.5rem;
                 }
 
-                .center {
-                    margin: auto;
-                }
-
                 .links {
+                    margin: auto;
                     flex-wrap: wrap;
                     justify-content: space-evenly;
-                }
-
-                .icon {
-                    border-radius: 8px;
                 }
 
                 @media screen and (max-width: 768px) {
