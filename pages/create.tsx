@@ -78,7 +78,7 @@ const Draft: React.FC = () => {
             value={endTime}
           />
           <br /><br />
-          <small><bold>Note:</bold> If you enter an event day that has already passed, it will be automatically deleted</small>
+          <small>Note: If you enter an event day that has already passed, it will be automatically deleted</small>
           <br /><br />
           <input disabled={!content || !title || !eventDate} type="submit" value="Create" />
           <a className="back" href="#" onClick={() => Router.push("/")}>
