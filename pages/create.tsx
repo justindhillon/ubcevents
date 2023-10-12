@@ -71,7 +71,7 @@ const Draft: React.FC = () => {
             onChange={(e) => setStartTime(e.target.value)}
             value={startTime}
           /> 
-          <text>  -  </text>
+          <label>  -  </label>
           <input 
             type="time" 
             onChange={(e) => setEndTime(e.target.value)}
