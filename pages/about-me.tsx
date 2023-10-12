@@ -126,7 +126,8 @@ const AboutMe: React.FC = () => {
                     grid-template-rows: repeat(2, 1fr);
                     grid-template-columns: repeat(3, 1fr);
                     grid-row-gap: 1rem;
-                    text-alian: center;
+                    justify-content: center;
+                    align-items: center;
                 }
 
                 @media screen and (max-width: 768px) {
