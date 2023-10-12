@@ -6,8 +6,8 @@ const Publish: React.FC<Props> = (props) => {
   return (
     <Layout>
       <Head>
-        <title></title>
-        <meta property="description" content="My page title" />
+        <title>Congradulations!</title>
+        <meta property="description" content="Congradulations on posting!" />
       </Head>
       <div className="page">
         <h1>Thank You For Posting!</h1>
