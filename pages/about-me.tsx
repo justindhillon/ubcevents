@@ -1,9 +1,7 @@
 import React from "react"
-import type { GetStaticProps } from "next"
 import Layout from "../components/Layout"
-import Post, { PostProps } from "../components/Post"
-import Footer from "../components/Footer";
 import Head from 'next/head';
+import Image from 'next/image';
 
 const AboutMe: React.FC = () => {
   return (
@@ -16,7 +14,10 @@ const AboutMe: React.FC = () => {
             <h1>About Me</h1>
             <main>
                 <div className="column">
-                    Column
+                <Image
+                    src="/images/profile.jpg"
+                    alt="Picture of the author"
+                />
                 </div>
                 <div className="column">
                     <p>About Me</p>
@@ -43,6 +44,12 @@ const AboutMe: React.FC = () => {
                 flex: 1;
                 padding: 10px;
                 text-align: center;
+            }
+
+            img {
+                border-radius: 50%;
+                width: 50%;
+                height: 500;
             }
 
             @media (max-width: 600px) {
