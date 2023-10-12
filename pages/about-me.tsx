@@ -59,7 +59,7 @@ const AboutMe: React.FC = () => {
                 -ms-flex: 1;
                 flex: 1;
                 padding: 2rem;
-                padding-top: 1rem
+                padding-top: 1rem;
                 text-align: center;
                 margin: auto;
             }
