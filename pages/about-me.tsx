@@ -8,29 +8,50 @@ import Head from 'next/head';
 const AboutMe: React.FC = () => {
   return (
     <Layout>
-      <Head>
-        <title>About Me</title>
-        <meta property="description" content="About Me Page" />
-      </Head>
-      <div className="page">
-        <h1>Upcoming Events</h1>
-        <main>
-            <h2>About Me</h2>
-            <p>About Me</p>
-        </main>
-        <div style={{textAlign:"center"}}>
-            <br /><br />
-            <p>Back to <a href="/"><span style={{color:"#2596be"}}>FEED</span></a></p>
-            <br /><br />
+        <Head>
+            <title>About Me</title>
+            <meta property="description" content="About Me Page" />
+        </Head>
+        <div className="page">
+            <h1>About Me</h1>
+            <main>
+                <div class="column" style="background-color:#aaa;">
+                    Column
+                </div>
+                <div class="column" style="background-color:#bbb;">
+                    <p>About Me</p>
+                </div>
+            </main>
+            <div style={{textAlign:"center"}}>
+                <br /><br />
+                <p>Back to <a href="/"><span style={{color:"#2596be"}}>Feed</span></a></p>
+                <br /><br />
+            </div>
         </div>
-    </div>
-    <style jsx>{`
-        main {
-            background: white;
-            padding: 2rem;
-            transition: box-shadow 0.1s ease-in;
-        }
-    `}</style>
+        <style jsx>{`
+            main {
+                background: white;
+                padding: 2rem;
+                transition: box-shadow 0.1s ease-in;
+                display: -webkit-flex;
+                display: flex;
+            }
+
+            .column {
+                -webkit-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+                padding: 10px;
+                text-align: center;
+            }
+
+            @media (max-width: 600px) {
+                .row {
+                  -webkit-flex-direction: column;
+                  flex-direction: column;
+                }
+            }
+        `}</style>
     </Layout>
   )
 }
