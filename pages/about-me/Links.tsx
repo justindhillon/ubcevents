@@ -83,6 +83,12 @@ const Links: React.FC = () => {
                 .links a {
                     margin-left: auto;
                     margin-right: auto;
+
+                    background-color: black;
+                }
+
+                .links a:hover {
+                    opacity: 0.7;
                 }
 
                 @media screen and (max-width: 512px) {
