@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
       },
     },
     orderBy: {
-      id: 'asc',
+      eventDate: 'asc',
     },
   })
   return {

@@ -16,7 +16,7 @@ export const getStaticProps: GetStaticProps = async () => {
       },
     },
     orderBy: {
-      id: 'asc',
+      eventDate: 'asc',
     },
   })
   return {
@@ -30,15 +30,6 @@ type Props = {
 }
 
 const UpcomingEvents: React.FC<Props> = (props) => {
-  // Sort feed by which ones are comming up soonest
-  props.feed.sort((a, b) => {
-    let dateA = new Date(a.eventDate);
-    let dateB = new Date(b.eventDate);
-    if (dateA < dateB) {
-      return -1;
-    }
-  });
-
   return (
     <Layout>
       <Head>
