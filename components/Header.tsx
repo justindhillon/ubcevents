@@ -168,6 +168,7 @@ const Header: React.FC = () => {
             text-decoration: none;
             color: #000;
             display: inline-block;
+            background: rgba(0, 0, 0, 0.05);
           }
 
           p {
@@ -177,7 +178,7 @@ const Header: React.FC = () => {
           }
 
           a + a {
-            margin-left: 1rem;
+            margin-left: 0.5rem;
           }
 
           .right {
