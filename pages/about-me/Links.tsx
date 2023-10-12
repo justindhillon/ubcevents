@@ -70,11 +70,11 @@ const Links: React.FC = () => {
 
                 .links {
                     width: 100%;
-                    max-width: 48rem;
+                    max-width: 32rem;
                     display: grid;
                     grid-template-rows: repeat(2, 1fr);
                     grid-template-columns: repeat(3, 1fr);
-                    grid-row-gap: 1rem;
+                    grid-row-gap: 2rem;
                     justify-content: center;
                     align-items: center;
                     text-align: center;
@@ -89,6 +89,7 @@ const Links: React.FC = () => {
                     .links {
                         grid-template-rows: repeat(3, 1fr);
                         grid-template-columns: repeat(2, 1fr);
+                        grid-row-gap: 1rem;
                     }
                 }
 
