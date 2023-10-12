@@ -4,11 +4,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 
 const AboutMe: React.FC = () => {
-    const handleClick = (link) => {
-        window.open(
-            { link },
-            '_blank' // <- This is what makes it open in a new window.
-        );
+    const handleClick = (url) => {
+        Window.open(url, '_blank');
     };
 
     return (
