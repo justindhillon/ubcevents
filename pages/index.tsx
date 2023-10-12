@@ -44,7 +44,7 @@ const UpcomingEvents: React.FC<Props> = (props) => {
       <div className="page">
         <h1>Upcoming Events</h1>
         <main>
-          {props.feed.map((post) => (
+          {props.feed.map.slice(0, 10)((post) => (
             <div key={post.id} className="post">
               <Post post={post} />
             </div>
