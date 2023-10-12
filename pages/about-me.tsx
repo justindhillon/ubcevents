@@ -120,7 +120,7 @@ const AboutMe: React.FC = () => {
                 }
 
                 .links {
-                    margin: 2rem;
+                    width: 100%;
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: space-evenly;
