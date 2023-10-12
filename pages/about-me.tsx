@@ -5,7 +5,7 @@ import Post, { PostProps } from "../components/Post"
 import Footer from "../components/Footer";
 import Head from 'next/head';
 
-const AboutMe: React.FC<Props> = (props) => {
+const AboutMe: React.FC = () => {
   return (
     <Layout>
       <Head>
