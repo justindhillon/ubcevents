@@ -77,7 +77,9 @@ const AboutMe: React.FC = () => {
                   padding: 0.5rem;
                   padding-top: 2.5rem;
                 }
+            }
 
+            @media screen and (max-width: 1024px) {
                 .text-block {
                     font-size: 1rem;
                 }
