@@ -83,7 +83,9 @@ const Links: React.FC = () => {
                 .links a {
                     margin-left: auto;
                     margin-right: auto;
+                }
 
+                .links img {
                     background-color: black;
                 }
 
