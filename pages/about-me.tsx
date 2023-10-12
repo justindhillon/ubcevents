@@ -23,15 +23,17 @@ const AboutMe: React.FC = () => {
                     />
                 </div>
                 <div className="column">
-                    <p className="text-block">
-                        Welcome to my corner of the internet! 
-                        I'm Justin Dhillon, and I'm delighted that you've dropped by. 
-                        I’m a UBC computer science student with a deep love for solving problems. 
-                        I never knew what events were going on at UBC, so I made this! 
-                        ubcevents.com lets ubc students post all their events in one place! 
-                        ubcevents.com is made to give you the best university experience! 
-                        Keeping you in the loop, and on top of everything UBC!
-                    </p>
+                    <div>
+                        <p className="text-block">
+                            Welcome to my corner of the internet! 
+                            I'm Justin Dhillon, and I'm delighted that you've dropped by. 
+                            I’m a UBC computer science student with a deep love for solving problems. 
+                            I never knew what events were going on at UBC, so I made this! 
+                            ubcevents.com lets ubc students post all their events in one place! 
+                            ubcevents.com is made to give you the best university experience! 
+                            Keeping you in the loop, and on top of everything UBC!
+                        </p>
+                    </div>
                 </div>
             </main>
             <div style={{textAlign:"center"}}>
