@@ -16,6 +16,8 @@ const AboutMe: React.FC = () => {
                 <div className="column">
                 <Image
                     src="/images/profile.jpg"
+                    width={500}
+                    height={500}
                     alt="Picture of the author"
                 />
                 </div>
@@ -48,8 +50,6 @@ const AboutMe: React.FC = () => {
 
             img {
                 border-radius: 50%;
-                width: 50%;
-                height: 500;
             }
 
             @media (max-width: 600px) {
