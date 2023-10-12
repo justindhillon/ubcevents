@@ -7,12 +7,15 @@ const Draft: React.FC = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [eventDate, setDate] = useState("");
+  const [startTime, setStartTime] = useState("");
+  const [endTime, setEndTime] = useState("");
+  const [location, setLocation] = useState("");
 
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     try {
       // Need to turn date string into DateTime object
-      const body = { title, content, eventDate };
+      const body = { title, content, eventDate, startTime, endTime, location };
       await fetch("/api/post", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -34,27 +37,51 @@ const Draft: React.FC = () => {
         <form onSubmit={submitData}>
           <h1>New Draft</h1>
           <input
+            maxlength="150"
             autoFocus
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="Title"
+            placeholder="Title *"
             type="text"
             value={title}
           />
           <textarea
+            maxlength="10000"
             cols={50}
             onChange={(e) => setContent(e.target.value)}
-            placeholder="Content"
+            placeholder="Content *"
             rows={8}
             value={content}
           />
+          <input
+            maxlength="100"
+            autoFocus
+            onChange={(e) => setLocation(e.target.value)}
+            placeholder="Location"
+            type="text"
+            value={location}
+          />
+          <br />
           <label>Date Of Event: </label>
           <input 
             onChange={(e) => setDate(e.target.value)}
             type="date" 
             value={eventDate}
+          /> *
+          <br /><br />
+          <label>Select a time:  </label>
+          <input 
+            type="time" 
+            onChange={(e) => setStartTime(e.target.value)}
+            value={startTime}
+          /> 
+          <label>  -  </label>
+          <input 
+            type="time" 
+            onChange={(e) => setEndTime(e.target.value)}
+            value={endTime}
           />
           <br /><br />
-          <small><bold>Note:</bold> If you enter an event day that has already passed, it will be automatically deleted</small>
+          <small>Note: If you enter an event day that has already passed, it will be automatically deleted</small>
           <br /><br />
           <input disabled={!content || !title || !eventDate} type="submit" value="Create" />
           <a className="back" href="#" onClick={() => Router.push("/")}>

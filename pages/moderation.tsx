@@ -9,11 +9,15 @@ import Head from 'next/head'
 
 export const getStaticProps: GetStaticProps = async () => {
   const feed = await prisma.post.findMany({
+    take: 10,
     where: { published: true, moderated: false },
     include: {
       author: {
         select: { name: true },
       },
+    },
+    orderBy: {
+      eventDate: 'asc',
     },
   })
   return {

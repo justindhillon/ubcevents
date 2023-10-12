@@ -8,6 +8,21 @@ import { useSession } from "next-auth/react";
 import prisma from "../../lib/prisma";
 import Head from 'next/head'
 
+function convertTime(time) {
+  const timeParts = time.split(':');
+  let hours = parseInt(timeParts[0], 10);
+  const minutes = timeParts[1];
+
+  const period = hours >= 12 ? 'PM' : 'AM';
+  if (hours > 12) {
+    hours -= 12;
+  }
+
+  const formattedTime = hours + ':' + minutes + ' ' + period;
+
+  return formattedTime;
+}
+
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const post = await prisma.post.findUnique({
     where: {
@@ -50,6 +65,22 @@ const Post: React.FC<PostProps> = (props) => {
     title = `${title} (Draft)`;
   }
 
+  const dateObj = new Date(props?.eventDate);
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = dateObj.toLocaleDateString('en-US', options);
+
+  let time = "";
+
+  if (props?.startTime) {
+    const startTime = convertTime(props?.startTime);
+    time += startTime;
+  }
+  
+  if (props?.endTime) {
+    const endTime = convertTime(props?.endTime);
+    time += " - " + endTime
+  }
+
   return (
     <Layout>
       <Head>
@@ -58,9 +89,11 @@ const Post: React.FC<PostProps> = (props) => {
       </Head>
       <div>
         <h2>{title}</h2>
-        <small>{props?.eventDate}</small>
         <p>By {props?.author?.name || "Unknown author"}</p>
         <ReactMarkdown children={props.content} />
+        <p>📅 {formattedDate}</p>
+        {time && <p>⏰ {time}</p>}
+        {props?.location && <p>📍 {props?.location}</p>}
         {!props.published && userHasValidSession && postBelongsToUser && (
           <button onClick={() => publishPost(props.id)}>Publish</button>
         )}
