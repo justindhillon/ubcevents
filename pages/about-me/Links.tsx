@@ -85,10 +85,6 @@ const Links: React.FC = () => {
                     margin-right: auto;
                 }
 
-                .links img {
-                    background-color: black;
-                }
-
                 .links a:hover {
                     opacity: 0.7;
                 }
