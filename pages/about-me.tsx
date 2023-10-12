@@ -60,6 +60,7 @@ const AboutMe: React.FC = () => {
                 flex: 1;
                 padding: 10px;
                 text-align: center;
+                margin: auto;
             }
 
             .profile {
