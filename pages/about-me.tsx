@@ -39,7 +39,14 @@ const AboutMe: React.FC = () => {
                 <br />
                 <main>
                     <div className="center">
-                        <a href="https://github.com/justindhillon" target="_blank"><button className="button">1</button></a>
+                        <a href="https://github.com/justindhillon" target="_blank">
+                            <Image
+                                src="/images/icons/instagram.png"
+                                width={128}
+                                height={128}
+                                alt="Instagram"
+                            />
+                        </a>
                         <a href="https://twitter.com/justindhillon0" target="_blank"><button className="button">2</button></a>
                         <a href="https://www.linkedin.com/in/justin-dhillon-5b0780295/" target="_blank"><button className="button">3</button></a>
                         <a href="https://github.com/justindhillon/ubcevents" target="_blank"><button className="button">4</button></a>
