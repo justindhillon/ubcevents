@@ -1,0 +1,4 @@
+# ubcevents.com/robots.txt
+User-agent: googlebot
+Disallow: /moderation/
+Disallow: /publish/
