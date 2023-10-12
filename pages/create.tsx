@@ -57,6 +57,7 @@ const Draft: React.FC = () => {
             type="text"
             value={location}
           />
+          <br />
           <label>Date Of Event: </label>
           <input 
             onChange={(e) => setDate(e.target.value)}
