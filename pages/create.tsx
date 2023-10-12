@@ -53,7 +53,7 @@ const Draft: React.FC = () => {
             value={content}
           />
           <input
-            maxlength="150"
+            maxlength="100"
             autoFocus
             onChange={(e) => setLocation(e.target.value)}
             placeholder="Location"
