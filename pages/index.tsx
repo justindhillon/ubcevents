@@ -4,7 +4,7 @@ import Layout from "../components/Layout"
 import Post, { PostProps } from "../components/Post"
 import prisma from "../lib/prisma";
 import Footer from "../components/Footer";
-import Head from 'next/head'
+import Head from 'next/head';
 
 export const getStaticProps: GetStaticProps = async () => {
   const feed = await prisma.post.findMany({
