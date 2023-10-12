@@ -13,7 +13,7 @@ const AboutMe: React.FC = () => {
         <div className="page">
             <h1>About Me</h1>
             <main>
-                <div className="column">
+                <div className="column" style={{ borderRadius:"50%" }}>
                 <Image
                     src="/images/profile.jpg"
                     width={500}
@@ -21,7 +21,7 @@ const AboutMe: React.FC = () => {
                     alt="Picture of the author"
                 />
                 </div>
-                <div className="column">
+                <div className="column" style={{ textAlign:"center" }}>
                     <p>Welcome to my corner of the internet! 
                         I'm Justin Dhillon, and I'm delighted that you've dropped by. 
                         I’m a UBC computer science student with a deep love for solving problems. 
