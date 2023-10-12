@@ -7,7 +7,7 @@ const AboutMe: React.FC = () => {
     return (
         <Layout>
             <Head>
-                <title>About Me</title>
+                <title>UBC Events - About Me</title>
                 <meta property="description" content="About Me Page" />
             </Head>
             <div className="page">
@@ -37,7 +37,7 @@ const AboutMe: React.FC = () => {
                 </main>
                 <br />
                 <br />
-                <main>
+                <main className="links">
                     <div className="center">
                         <a href="https://github.com/justindhillon" target="_blank" className="icon">
                             <Image
@@ -126,6 +126,11 @@ const AboutMe: React.FC = () => {
 
                 .center {
                     margin: auto;
+                }
+
+                .links {
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
                 }
 
                 .icon {
