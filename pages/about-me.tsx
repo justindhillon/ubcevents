@@ -14,13 +14,13 @@ const AboutMe: React.FC = () => {
             <h1>About Me</h1>
             <main>
                 <div className="column">
-                <Image
-                    src="/images/profile.jpg"
-                    width={500}
-                    height={500}
-                    alt="Picture of the author"
-                    className="profile"
-                />
+                    <Image
+                        src="/images/profile.jpg"
+                        width={500}
+                        height={500}
+                        alt="Picture of the author"
+                        className="profile"
+                    />
                 </div>
                 <div className="column" style={{ textAlign:"left" }}>
                     <p>Welcome to my corner of the internet! 
@@ -60,7 +60,7 @@ const AboutMe: React.FC = () => {
             }
 
             @media screen and (min-width: 768px) {
-                .row {
+                main {
                   -webkit-flex-direction: column;
                   flex-direction: column;
                 }
