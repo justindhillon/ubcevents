@@ -1,6 +1,7 @@
 'use client'
 
 import { useInfiniteQuery } from "react-query";
+import prisma from "../lib/prisma";
 
 const posts = [
 	{ id: 1, title: "post 1" },
@@ -12,6 +13,23 @@ const posts = [
 ]
 
 const fetchPost = async (page: number) => {
+	const feed = await prisma.post.findMany({
+		skip: (page - 1) * 2,
+		take: page * 2,
+		where: { published: true, moderated: true },
+		include: {
+		  	author: {
+				select: { name: true },
+		  	},
+		},
+		orderBy: {
+		  	eventDate: 'asc',
+		},
+	})
+	return {
+		feed
+	}
+	
 	await new Promise((resolve) => setTimeout(resolve, 1000));
 	return posts.slice((page - 1) * 2, page * 2);
 }
