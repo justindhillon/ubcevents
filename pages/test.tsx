@@ -54,7 +54,7 @@ const Page = () => {
 		  </div>
 		))}
 	  </main>
-	  <button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
+	  <button className="post" onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
 	    {isFetchingNextPage
 		  ? "Loading more..."
 		  : "Load More"
