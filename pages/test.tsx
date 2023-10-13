@@ -13,7 +13,7 @@ const posts = [
 ]
 
 const fetchPost = async (page: number) => {
-	const feed = await axios.get('https://placevanierline.vercel.app/api/get-data', {
+	const feed = await axios.get('/post/get', {
         method: "GET",
         body: JSON.stringify(page),
     }); 
