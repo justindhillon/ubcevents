@@ -42,7 +42,7 @@ const UpcomingEvents: React.FC = (props) => {
       <div className="page">
         <h1>Upcoming Events</h1>
         <main>
-          {data.posts.map((post) => (
+          {data.pages.map((post) => (
             <div key={post.id} className="post">
               <Post post={post} />
             </div>
