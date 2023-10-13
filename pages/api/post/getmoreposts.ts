@@ -1,4 +1,3 @@
-import { getSession } from "next-auth/react";
 import prisma from "../../../lib/prisma";
 
 // POST /api/post/getmoreposts
@@ -21,5 +20,5 @@ export default async function handle(req, res) {
       eventDate: 'asc',
     },
   })
-  res.json( feed );
+  return res.status(200).json({ feed });
 }
