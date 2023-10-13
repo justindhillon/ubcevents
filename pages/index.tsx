@@ -42,11 +42,17 @@ const UpcomingEvents: React.FC = (props) => {
       <div className="page">
         <h1>Upcoming Events</h1>
         <main>
-          {data.pages.posts.map((post) => (
-            <div key={post.id} className="post">
-              <Post post={post} />
-            </div>
-          ))}
+          {data &&
+            data.pages.map((page) => {
+              return (
+                {page.posts.map((post) => (
+                  <div key={post.id} className="post">
+                    <Post post={post} />
+                  </div>
+                ))}
+              )
+            })
+          }
         </main>
         <Footer />
         {isFetchingNextPage ? <div className="loading">Loading...</div> : null}
