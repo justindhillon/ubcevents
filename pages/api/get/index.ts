@@ -21,7 +21,6 @@ export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
 
     const posts = await prisma.post.findMany({
       skip: cursor !== '' ? 1 : 0,
-      cursor: cursorObj,
       take: limit,
       where: { published: true, moderated: true },
       include: {
