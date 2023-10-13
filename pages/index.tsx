@@ -49,6 +49,11 @@ const UpcomingEvents: React.FC = (props) => {
           ))}
         </main>
         <Footer />
+        {isFetchingNextPage ? <div className="loading">Loading...</div> : null}
+
+        <span style={{ visibility: 'hidden' }} ref={ref}>
+          intersection observer marker
+        </span>
       </div>
       <style jsx>{`
         .post {
