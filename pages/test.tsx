@@ -94,6 +94,8 @@ const Page = () => {
 		['query'],
 		async ({ pageParam = 1 }) => {
 			const response = await posts.slice(0, 2); //fetchPost(pageParam);
+			console.log(posts.slice(0, 2));
+			console.log(fetchPost(pageParam));
 			return response;
 		},
 		{
@@ -106,8 +108,6 @@ const Page = () => {
 			}
 		}
 	)
-
-	console.log(data.pages);
 
 	return (
 		<div>
