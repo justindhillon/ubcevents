@@ -34,6 +34,6 @@ export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
       },
     })
 
-    return res.json({ posts, nextId: posts.length === limit ? posts[limit - 1].id : undefined })
+    return res.json({ posts, nextId: posts.length === limit })
   }
 }
