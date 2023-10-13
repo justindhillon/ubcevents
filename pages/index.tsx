@@ -1,36 +1,38 @@
 import React from "react"
-import type { GetStaticProps } from "next"
 import Layout from "../components/Layout"
 import Post, { PostProps } from "../components/Post"
-import prisma from "../lib/prisma";
 import Footer from "../components/Footer";
 import Head from 'next/head';
-import { useState, useEffect } from "react";
+import { useEffect } from 'react'
+import { useInfiniteQuery } from 'react-query'
+import axios from 'axios'
+import { useInView } from 'react-intersection-observer'
 
-export const getStaticProps: GetStaticProps = async () => {
-  const feed = await prisma.post.findMany({
-    take: 10,
-    where: { published: true, moderated: true },
-    include: {
-      author: {
-        select: { name: true },
+const UpcomingEvents: React.FC = (props) => {
+  const { ref, inView } = useInView()
+
+  const { isLoading, isError, data, error, isFetchingNextPage, fetchNextPage, hasNextPage } =
+    useInfiniteQuery(
+      'posts',
+      async ({ pageParam = '' }) => {
+        await new Promise((res) => setTimeout(res, 1000))
+        const res = await axios.get('/api/get?cursor=' + pageParam)
+        return res.data
       },
-    },
-    orderBy: {
-      eventDate: 'asc',
-    },
-  })
-  return {
-    props: { feed },
-    revalidate: 10,
-  }
-}
+      {
+        getNextPageParam: (lastPage) => lastPage.nextId ?? false,
+      }
+    )
 
-type Props = {
-  feed: PostProps[]
-}
+  useEffect(() => {
+    if (inView && hasNextPage) {
+      fetchNextPage()
+    }
+  }, [inView])
 
-const UpcomingEvents: React.FC<Props> = (props) => {
+  if (isLoading) return <div className="loading">Loading...</div>
+  if (isError) return <div>Error! {JSON.stringify(error)}</div>
+
   return (
     <Layout>
       <Head>
@@ -40,7 +42,7 @@ const UpcomingEvents: React.FC<Props> = (props) => {
       <div className="page">
         <h1>Upcoming Events</h1>
         <main>
-          {props.feed.map((post) => (
+          {data.posts.map((post) => (
             <div key={post.id} className="post">
               <Post post={post} />
             </div>
