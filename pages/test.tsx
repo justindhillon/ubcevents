@@ -53,19 +53,23 @@ const Page = () => {
 			}
 		  </div>
 		))}
+		<button className="post" onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
+	      {isFetchingNextPage
+		    ? "Loading more..."
+		    : "Load More"
+		  }
+	    </button>
 	  </main>
-	  <button className="post" onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
-	    {isFetchingNextPage
-		  ? "Loading more..."
-		  : "Load More"
-		}
-	  </button>
 	  <Footer />
 	</div>
 	<style jsx>{`
 	  .post {
 		background: white;
 		transition: box-shadow 0.1s ease-in;
+	  }
+
+	  .post button {
+		border: none;
 	  }
 
 	  .post:hover {
