@@ -107,6 +107,8 @@ const Page = () => {
 		}
 	)
 
+	console.log(data.pages);
+
 	return (
 		<div>
 			Posts:
