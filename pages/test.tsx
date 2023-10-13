@@ -32,34 +32,36 @@ const Page = () => {
 
   return (
 	<Layout>
-	<Head>
-	  <title>UBC Events</title>
-	  <meta property="description" content="Everything UBC" />
-	</Head>
-	<div className="page">
-	  <h1>Upcoming Events</h1>
-	  <main>
-		{data?.pages.map((page, i) => (
-			<div key={i}>
-			{Array.isArray(page)
-				? page.map((post) => {
-			    return (
-				  <div key={post.id} className="post">
-					<Post post={post} />
-				  </div>
-				)
-			  })
-			  : null
-			}
-		  </div>
-		))}
-	  </main>
-	  <button className="button" onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
-	    {isFetchingNextPage
-		  ? "Loading more..."
-		  : "Load More"
-		}
-	  </button>
+		<Head>
+			<title>UBC Events</title>
+			<meta property="description" content="Everything UBC" />
+		</Head>
+		<div className="page">
+			<h1>Upcoming Events</h1>
+			<main>
+				{data?.pages.map((page, i) => (
+					<div key={i}>
+						{Array.isArray(page)
+							? page.map((post) => {
+								return (
+								<div key={post.id} className="post">
+								<Post post={post} />
+								</div>
+							)
+						})
+						: null
+						}
+					</div>
+				))}
+				<div style={{textAlign:"center"}}>
+					<button className="button" onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
+						{isFetchingNextPage
+						? "Loading more..."
+						: "Load More"
+					}
+					</button>
+				</div>
+			</main>
 	  <Footer />
 	</div>
 	<style jsx>{`
@@ -73,7 +75,7 @@ const Page = () => {
 			margin-top: 2rem;
 			background: white;
 			border-width: 0;
-			padding: 2rem 4rem;
+			padding: 1.5rem 4rem;
 			transition: box-shadow 0.1s ease-in;
 			font-size: 1.5rem;
 		}
