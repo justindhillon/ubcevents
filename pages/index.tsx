@@ -5,6 +5,8 @@ import Post, { PostProps } from "../components/Post"
 import prisma from "../lib/prisma";
 import Footer from "../components/Footer";
 import Head from 'next/head';
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export const getStaticProps: GetStaticProps = async () => {
   const feed = await prisma.post.findMany({
@@ -30,6 +32,16 @@ type Props = {
 }
 
 const UpcomingEvents: React.FC<Props> = (props) => {
+  const [feed, setFeed] = useState([]);
+
+  setFeed(props.feed);
+
+  async function getMorePosts(index: number): Promise<void> {
+    const res = await axios.get('/api/post/getmoreposts'); 
+    setFeed(feed => [feed, res]);
+    console.log(feed);
+  }
+
   return (
     <Layout>
       <Head>
@@ -39,12 +51,15 @@ const UpcomingEvents: React.FC<Props> = (props) => {
       <div className="page">
         <h1>Upcoming Events</h1>
         <main>
-          {props.feed.map((post) => (
+          {feed.map((post) => (
             <div key={post.id} className="post">
               <Post post={post} />
             </div>
           ))}
         </main>
+        <button className=".post" onClick={() => getMorePosts(1)}>
+          Load More
+        </button>
         <Footer />
       </div>
       <style jsx>{`
