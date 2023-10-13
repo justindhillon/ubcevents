@@ -99,10 +99,6 @@ const Page = () => {
 		{
 			getNextPageParam: (_, pages) => {
 				return pages.length + 1
-			},
-			initialData: {
-				pages: [posts.slice(0, 2)],
-				pageParams: [1],
 			}
 		}
 	)
