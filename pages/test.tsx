@@ -112,7 +112,7 @@ const Page = () => {
 			Posts:
 			{data?.pages.map((page, i) => (
 				<div key={i}>
-					{console.log(page)}
+					{console.log(Array.isArray(page))}
 					{page.map((post) => (
 						<div key={post.id}>{post.title}</div>
 					))}
