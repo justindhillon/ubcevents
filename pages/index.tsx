@@ -1,38 +1,36 @@
 import React from "react"
+import type { GetStaticProps } from "next"
 import Layout from "../components/Layout"
 import Post, { PostProps } from "../components/Post"
+import prisma from "../lib/prisma";
 import Footer from "../components/Footer";
 import Head from 'next/head';
-import { useEffect } from 'react'
-import { useInfiniteQuery } from 'react-query'
-import axios from 'axios'
-import { useInView } from 'react-intersection-observer'
 
-const UpcomingEvents: React.FC = (props) => {
-  const { ref, inView } = useInView()
-
-  const { isLoading, isError, data, error, isFetchingNextPage, fetchNextPage, hasNextPage } =
-    useInfiniteQuery(
-      'posts',
-      async ({ pageParam = '' }) => {
-        await new Promise((res) => setTimeout(res, 1000))
-        const res = await axios.get('/api/get?cursor=' + pageParam)
-        return res.data
+export const getStaticProps: GetStaticProps = async () => {
+  const feed = await prisma.post.findMany({
+    take: 10,
+    where: { published: true, moderated: true },
+    include: {
+      author: {
+        select: { name: true },
       },
-      {
-        getNextPageParam: (lastPage) => lastPage.nextId ?? false,
-      }
-    )
+    },
+    orderBy: {
+      eventDate: 'asc',
+    },
+  })
+  return {
+    props: { feed },
+    revalidate: 10,
+  }
+}
 
-  useEffect(() => {
-    if (inView && hasNextPage) {
-      fetchNextPage()
-    }
-  }, [inView])
+type Props = {
+  feed: PostProps[]
+}
 
-  if (isLoading) return <div className="loading">Loading...</div>
-  if (isError) return <div>Error! {JSON.stringify(error)}</div>
-
+const UpcomingEvents: React.FC<Props> = (props) => {
+  console.log(props.feed);
   return (
     <Layout>
       <Head>
@@ -42,18 +40,13 @@ const UpcomingEvents: React.FC = (props) => {
       <div className="page">
         <h1>Upcoming Events</h1>
         <main>
-          {data.posts.map((post) => (
+          {props.feed.map((post) => (
             <div key={post.id} className="post">
               <Post post={post} />
             </div>
           ))}
         </main>
         <Footer />
-        {isFetchingNextPage ? <div className="loading">Loading...</div> : null}
-
-        <span style={{ visibility: 'hidden' }} ref={ref}>
-          intersection observer marker
-        </span>
       </div>
       <style jsx>{`
         .post {
@@ -73,4 +66,4 @@ const UpcomingEvents: React.FC = (props) => {
   )
 }
 
-export default UpcomingEvents
+export default UpcomingEvents;
