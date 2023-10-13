@@ -69,12 +69,13 @@ const Page = () => {
 	  }
 
 		.button {
+			text-align: center;
 			margin-top: 2rem;
 			background: white;
 			border-width: 0;
-			padding: 1rem 2rem;
+			padding: 2rem 4rem;
 			transition: box-shadow 0.1s ease-in;
-			font-size: 18px;
+			font-size: 1.5rem;
 		}
 
 		.button:hover {
