@@ -95,7 +95,7 @@ const Page = () => {
 		async ({ pageParam = 1 }) => {
 			const response = await posts.slice(0, 2); //fetchPost(pageParam);
 			console.log(posts.slice(0, 2));
-			console.log(fetchPost(pageParam));
+			console.log(await fetchPost(pageParam));
 			return response;
 		},
 		{
