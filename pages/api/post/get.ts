@@ -1,7 +1,7 @@
 import { getSession } from "next-auth/react";
 import prisma from "../../../lib/prisma";
 
-// GET /api/post/get
+// POST /api/post/get
 export default async function handle(req, res) {
   const { page } = req.body;
   console.log(page);
