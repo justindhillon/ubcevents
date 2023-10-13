@@ -1,9 +1,7 @@
 import prisma from "../../../lib/prisma";
 
 // GET /api/get
-// /app/api/users/route.ts
-
-export async function GET(req: Request){
+export default async function GET(req: Request){
  try {
   // get page and lastCursor from query
   const url = new URL(req.url);
