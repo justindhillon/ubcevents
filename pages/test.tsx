@@ -70,29 +70,10 @@ const Page = () => {
 
 		.button {
 			margin-top: 2rem;
-			align-items: center;
-			display: inline-flex;
-			justify-content: center;
-			appearance: none;
 			background: white;
 			border-width: 0;
-			box-sizing: border-box;
-			color: #36395A;
-			cursor: pointer;
-			height: 48px;
-			line-height: 1;
-			list-style: none;
-			padding-left: 16px;
-			padding-right: 16px;
-			position: relative;
-			text-align: left;
-			text-decoration: none;
+			padding: 1rem 2rem;
 			transition: box-shadow 0.1s ease-in;
-			user-select: none;
-			-webkit-user-select: none;
-			touch-action: manipulation;
-			white-space: nowrap;
-			will-change: box-shadow,transform;
 			font-size: 18px;
 		}
 
