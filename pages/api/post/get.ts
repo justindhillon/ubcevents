@@ -4,6 +4,7 @@ import prisma from "../../../lib/prisma";
 // GET /api/post/get
 export default async function handle(req, res) {
   const { page } = req.body;
+  console.log(page);
   const feed = await prisma.post.findMany({
 		skip: 5,
 		take: 5,
