@@ -70,20 +70,16 @@ const Page = () => {
 
 		.button {
 			margin-top: 2rem;
-			margin-left: auto;
-			margin-right: auto;
 			align-items: center;
+			display: inline-flex;
+			justify-content: center;
 			appearance: none;
 			background: white;
-			border-radius: 4px;
 			border-width: 0;
-			box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
 			box-sizing: border-box;
 			color: #36395A;
 			cursor: pointer;
-			display: inline-flex;
 			height: 48px;
-			justify-content: center;
 			line-height: 1;
 			list-style: none;
 			padding-left: 16px;
