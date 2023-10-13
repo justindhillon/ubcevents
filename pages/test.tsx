@@ -93,10 +93,8 @@ const Page = () => {
 	const { data, fetchNextPage, isFetchingNextPage } = useInfiniteQuery(
 		['query'],
 		async ({ pageParam = 1 }) => {
-			const response = await posts.slice(0, 2); //fetchPost(pageParam);
-			console.log(posts.slice(0, 2));
-			console.log(await fetchPost(pageParam));
-			return response;
+			const response = await fetchPost(pageParam);
+			return response.data;
 		},
 		{
 			getNextPageParam: (_, pages) => {
