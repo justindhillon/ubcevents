@@ -62,41 +62,41 @@ const Page = () => {
 					</button>
 				</div>
 			</main>
-	  <Footer />
-	</div>
-	<style jsx>{`
-	  .post {
-			background: white;
-			transition: box-shadow 0.1s ease-in;
-	  }
+			<Footer />
+		</div>
+		<style jsx>{`
+			.post {
+				background: white;
+				transition: box-shadow 0.1s ease-in;
+			}
 
-		.button {
-			text-align: center;
-			margin-top: 2rem;
-			background: white;
-			border-width: 0;
-			padding: 1.5rem 4rem;
-			transition: box-shadow 0.1s ease-in;
-			font-size: 1.5rem;
-		}
+			.button {
+				text-align: center;
+				margin-top: 2rem;
+				background: white;
+				border-width: 0;
+				padding: 1rem 5rem;
+				transition: box-shadow 0.1s ease-in;
+				font-size: 1.5rem;
+			}
 
-		.button:hover {
-			box-shadow: 1px 1px 3px #aaa;
-		}
+			.button:hover {
+				box-shadow: 1px 1px 3px #aaa;
+			}
 
-		.button:active {
-			box-shadow: #D6D6E7 0 3px 7px inset;
-			transform: translateY(2px);
-		}
+			.button:active {
+				box-shadow: #D6D6E7 0 3px 7px inset;
+				transform: translateY(2px);
+			}
 
-	  .post:hover {
-			box-shadow: 1px 1px 3px #aaa;
-	  }
+			.post:hover {
+				box-shadow: 1px 1px 3px #aaa;
+			}
 
-	  .post + .post {
-			margin-top: 2rem;
-	  }
-	`}</style>
+			.post + .post {
+				margin-top: 2rem;
+			}
+		`}</style>
   </Layout>	
   )
 }
