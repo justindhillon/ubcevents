@@ -112,7 +112,9 @@ const Page = () => {
 			Posts:
 			{data?.pages.map((page, i) => (
 				<div key={i}>
-					<div key={page.id}>{page.title}</div>
+					{page.map((post) => (
+						<div key={post.id}>{post.title}</div>
+					))}
 				</div>
 			))}
 			<button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
