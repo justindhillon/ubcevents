@@ -108,12 +108,14 @@ const Page = () => {
 	)
 
 	console.log(data);
+	console.log(data.pages);
 
 	return (
 		<div>
 			Posts:
 			{data?.pages.map((page, i) => (
 				<div key={i}>
+					{console.log(page)}
 					{page.map((post) => (
 						<div key={post.id}>{post.title}</div>
 					))}
