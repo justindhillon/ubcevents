@@ -113,7 +113,7 @@ const Page = () => {
 			{data?.pages.map((page, i) => (
 				<div key={i}>
 					{console.log(page)}
-					{page.data.map((post) => (
+					{JSON.parse(page).map((post) => (
 						<div key={post.id}>{post.title}</div>
 					))}
 				</div>
