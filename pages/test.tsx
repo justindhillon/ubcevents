@@ -115,9 +115,9 @@ const Page = () => {
 			{data?.pages.map((page, i) => (
 				<div key={i}>
 					{Array.isArray(page)
-        				? {page.map((post) => (
-							<div key={post.id}>{post.title}</div>
-						))}
+        				? page.map((post) => {
+							return <div key={post.id}>{post.title}</div>
+						})
 						: null
 					}
 				</div>
