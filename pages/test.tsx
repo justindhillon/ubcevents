@@ -13,7 +13,7 @@ const posts = [
 ]
 
 const fetchPost = async (page: number) => {
-	const feed = await axios.get('/post/get', {
+	const feed = await axios.get('/api/post/get', {
         method: "GET",
         body: JSON.stringify(page),
     }); 
