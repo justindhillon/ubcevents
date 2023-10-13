@@ -4,12 +4,81 @@ import { useInfiniteQuery } from "react-query";
 import axios from "axios";
 
 const posts = [
-	{ id: 1, title: "post 1" },
-	{ id: 2, title: "post 2" },
-	{ id: 3, title: "post 3" },
-	{ id: 4, title: "post 4" },
-	{ id: 5, title: "post 5" },
-	{ id: 6, title: "post 6" },
+    {
+        "id": "clnntv4pk0006m6jz8kobzmmz",
+        "title": "tomarrow",
+        "content": "twer",
+        "eventDate": "2023-10-21",
+        "startTime": "",
+        "endTime": "",
+        "location": "",
+        "published": true,
+        "moderated": true,
+        "authorId": "clnmgo1it000im6izo31bdchf",
+        "author": {
+            "name": "Justin Dhillon"
+        }
+    },
+    {
+        "id": "clnnu1um5000fm6jzc9el9l8w",
+        "title": "s",
+        "content": "asdtaadf",
+        "eventDate": "2023-10-25",
+        "startTime": "",
+        "endTime": "",
+        "location": "",
+        "published": true,
+        "moderated": true,
+        "authorId": "clnmgo1it000im6izo31bdchf",
+        "author": {
+            "name": "Justin Dhillon"
+        }
+    },
+    {
+        "id": "clnnu0po3000bm6jz08umew33",
+        "title": "test",
+        "content": "test",
+        "eventDate": "2023-11-08",
+        "startTime": "",
+        "endTime": "",
+        "location": "",
+        "published": true,
+        "moderated": true,
+        "authorId": "clnmgo1it000im6izo31bdchf",
+        "author": {
+            "name": "Justin Dhillon"
+        }
+    },
+    {
+        "id": "clnnu0k5m000am6jzskqsn1cw",
+        "title": "test",
+        "content": "test",
+        "eventDate": "2023-11-10",
+        "startTime": "",
+        "endTime": "",
+        "location": "",
+        "published": true,
+        "moderated": true,
+        "authorId": "clnmgo1it000im6izo31bdchf",
+        "author": {
+            "name": "Justin Dhillon"
+        }
+    },
+    {
+        "id": "clnnu0w8t000cm6jzaaua2do3",
+        "title": "test",
+        "content": "test",
+        "eventDate": "2023-12-12",
+        "startTime": "",
+        "endTime": "",
+        "location": "",
+        "published": true,
+        "moderated": true,
+        "authorId": "clnmgo1it000im6izo31bdchf",
+        "author": {
+            "name": "Justin Dhillon"
+        }
+    }
 ]
 
 const fetchPost = async (page: number) => {
