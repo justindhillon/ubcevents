@@ -34,7 +34,9 @@ type Props = {
 const UpcomingEvents: React.FC<Props> = (props) => {
   const [feed, setFeed] = useState([]);
 
-  setFeed(props.feed);
+  useEffect( () => { 
+    setFeed(props.feed);
+  }, []);
 
   async function getMorePosts(index: number): Promise<void> {
     const res = await axios.get('/api/post/getmoreposts'); 
