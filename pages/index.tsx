@@ -44,13 +44,11 @@ const UpcomingEvents: React.FC = (props) => {
         <main>
           {data &&
             data.pages.map((page) => {
-              return (
-                {page.posts.map((post) => (
-                  <div key={post.id} className="post">
-                    <Post post={post} />
-                  </div>
-                ))}
-              )
+              {page.posts.map((post) => (
+                <div key={post.id} className="post">
+                  <Post post={post} />
+                </div>
+              ))}
             })
           }
         </main>
