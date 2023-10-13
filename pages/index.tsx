@@ -65,4 +65,4 @@ const UpcomingEvents: React.FC<Props> = (props) => {
   )
 }
 
-export default UpcomingEvents
+export default UpcomingEvents;
