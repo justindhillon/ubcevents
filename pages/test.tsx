@@ -4,7 +4,6 @@ import { useInfiniteQuery } from "react-query";
 import axios from "axios";
 
 const fetchPost = async (page: number) => {
-	console.log(page);
 	const feed = await axios.post('/api/post/get', {
         body: page,
     }); 
