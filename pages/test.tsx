@@ -2,6 +2,12 @@
 
 import { useInfiniteQuery } from "react-query";
 import axios from "axios";
+import React from "react"
+import Layout from "../components/Layout"
+import Post, { PostProps } from "../components/Post"
+import Footer from "../components/Footer";
+import Head from 'next/head';
+
 
 const fetchPost = async (page: number) => {
 	const feed = await axios.post('/api/post/get', {
@@ -24,29 +30,54 @@ const Page = () => {
 		}
 	)
 
-	return (
-		<div>
-			Posts:
-			{data?.pages.map((page, i) => (
-				<div key={i}>
-					{Array.isArray(page)
-        				? page.map((post) => {
-							return <div key={post.id}>{post.title}</div>
-						})
-						: null
-					}
-				</div>
-			))}
-			<button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
-				{isFetchingNextPage
-					? "Loading more..."
-					: (data?.pages.length ?? 0) < 3
-					? "Load More"
-					: "nothing more to load"
-				}
-			</button>
-		</div>
-	)
+  return (
+	<Layout>
+	<Head>
+	  <title>UBC Events</title>
+	  <meta property="description" content="Everything UBC" />
+	</Head>
+	<div className="page">
+	  <h1>Upcoming Events</h1>
+	  <main>
+		{data?.pages.map((page, i) => (
+		  <div key={i}>
+			{Array.isArray(page)
+				? page.map((post) => {
+			    return (
+				  <div key={post.id} className="post">
+					<Post post={post} />
+				  </div>
+				)
+			  })
+			  : null
+			}
+		  </div>
+		))}
+	  </main>
+	  <button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
+	    {isFetchingNextPage
+		  ? "Loading more..."
+		  : "Load More"
+		}
+	  </button>
+	  <Footer />
+	</div>
+	<style jsx>{`
+	  .post {
+		background: white;
+		transition: box-shadow 0.1s ease-in;
+	  }
+
+	  .post:hover {
+		box-shadow: 1px 1px 3px #aaa;
+	  }
+
+	  .post + .post {
+		margin-top: 2rem;
+	  }
+	`}</style>
+  </Layout>	
+  )
 }
 
 export default Page;
