@@ -18,10 +18,8 @@ const LoadMore = () => {
 
 	const { data, fetchNextPage, isFetchingNextPage } = useInfiniteQuery(
 		['query'],
-		async ({ pageParam = 1 }) => {
+		async ({ pageParam = 0 }) => {
 			const response = await fetchPost(pageParam);
-      console.log(response);
-      console.log(response.data.length);
       if (response.data.length < 5) {
         setShowButton(false);
       }
