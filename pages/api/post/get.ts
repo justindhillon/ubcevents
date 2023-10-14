@@ -5,12 +5,12 @@ import prisma from "../../../lib/prisma";
 export default async function handle(req, res) {
   const page = req.body;
   const feed = await prisma.post.findMany({
-		skip: (page.body - 1) * 5,
+		skip: (page.body - 1) * 5 + 1,
 		take: page.body * 5,
 		where: { published: true, moderated: true },
 		include: {
 		  	author: {
-				select: { name: true },
+				  select: { name: true },
 		  	},
 		},
 		orderBy: {

@@ -19,7 +19,6 @@ function convertTime(time) {
   }
 
   const formattedTime = hours + ':' + minutes + ' ' + period;
-
   return formattedTime;
 }
 
