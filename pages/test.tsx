@@ -1,100 +1,71 @@
-'use client'
-
-import { useInfiniteQuery } from "react-query";
-import axios from "axios";
 import React from "react"
+import type { GetStaticProps } from "next"
 import Layout from "../components/Layout"
 import Post, { PostProps } from "../components/Post"
+import prisma from "../lib/prisma";
 import Footer from "../components/Footer";
+import LoadMore from "../components/LoadMore";
 import Head from 'next/head';
 
-
-const fetchPost = async (page: number) => {
-	const feed = await axios.post('/api/post/get', {
-    	body: page,
-    }); 
-	return feed;
+export const getStaticProps: GetStaticProps = async () => {
+  const feed = await prisma.post.findMany({
+    take: 10,
+    where: { published: true, moderated: true },
+    include: {
+      author: {
+        select: { name: true },
+      },
+    },
+    orderBy: {
+      eventDate: 'asc',
+    },
+  })
+  return {
+    props: { feed },
+    revalidate: 10,
+  }
 }
 
-const Page = () => {
-	const { data, fetchNextPage, isFetchingNextPage } = useInfiniteQuery(
-		['query'],
-		async ({ pageParam = 1 }) => {
-			const response = await fetchPost(pageParam);
-			return response.data;
-		},
-		{
-			getNextPageParam: (_, pages) => {
-				return pages.length + 1
-			}
-		}
-	)
+type Props = {
+  feed: PostProps[]
+}
 
+const UpcomingEvents: React.FC<Props> = (props) => {
+  console.log(props.feed);
   return (
-	<Layout>
-		<Head>
-			<title>UBC Events</title>
-			<meta property="description" content="Everything UBC" />
-		</Head>
-		<div className="page">
-			<h1>Upcoming Events</h1>
-			<main>
-				{data?.pages.map((page, i) => (
-					<div key={i}>
-						{Array.isArray(page)
-							? page.map((post) => {
-								return (
-								<div key={post.id} className="post">
-								<Post post={post} />
-								</div>
-							)
-						})
-						: null
-						}
-					</div>
-				))}
-				<div style={{textAlign:"center"}}>
-					<button className="button" onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
-						{isFetchingNextPage
-						? "Loading more..."
-						: "Load More"
-					}
-					</button>
-				</div>
-			</main>
-			<Footer />
-		</div>
-		<style jsx>{`
-			.post {
-				background: white;
-				transition: box-shadow 0.1s ease-in;
-				margin-bottom: 2rem;
-			}
+    <Layout>
+      <Head>
+        <title>UBC Events</title>
+        <meta property="description" content="Everything UBC" />
+      </Head>
+      <div className="page">
+        <h1>Upcoming Events</h1>
+        <main>
+          {props.feed.map((post) => (
+            <div key={post.id} className="post">
+              <Post post={post} />
+            </div>
+          ))}
+        </main>
+				<LoadMore />
+        <Footer />
+      </div>
+      <style jsx>{`
+        .post {
+          background: white;
+          transition: box-shadow 0.1s ease-in;
+        }
 
-			.button {
-				text-align: center;
-				background: white;
-				border-width: 0;
-				padding: 1rem 5rem;
-				transition: box-shadow 0.1s ease-in;
-				font-size: 1.5rem;
-			}
+        .post:hover {
+          box-shadow: 1px 1px 3px #aaa;
+        }
 
-			.button:hover {
-				box-shadow: 1px 1px 3px #aaa;
-			}
-
-			.button:active {
-				box-shadow: #D6D6E7 0 3px 7px inset;
-				transform: translateY(2px);
-			}
-
-			.post:hover {
-				box-shadow: 1px 1px 3px #aaa;
-			}
-		`}</style>
-  </Layout>	
+        .post + .post {
+          margin-bottom: 2rem;
+        }
+      `}</style>
+    </Layout>
   )
 }
 
-export default Page;
+export default UpcomingEvents;
