@@ -22,8 +22,10 @@ const LoadMore = () => {
       console.log(response);
       console.log(response.data.length);
       if (response.data.length < 5) {
-        showButton = false
+        showButton = false;
+        console.log("test");
       }
+      console.log(showButton);
 			return response.data;
 		},
 		{
