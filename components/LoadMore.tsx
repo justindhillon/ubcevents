@@ -7,7 +7,6 @@ import Post from "../components/Post"
 import { useState } from "react";
 
 const fetchPost = async (page: number) => {
-  console.log("fetch");
 	const feed = await axios.post('/api/post/get', {
     body: page,
   }); 
@@ -24,6 +23,7 @@ const LoadMore = () => {
       if (response.data.length < 2) {
         setShowButton(false);
       }
+      console.log(response);
 			return response.data;
 		},
 		{
