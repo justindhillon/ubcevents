@@ -68,11 +68,11 @@ const Page = () => {
 			.post {
 				background: white;
 				transition: box-shadow 0.1s ease-in;
+				margin-bottom: 2rem;
 			}
 
 			.button {
 				text-align: center;
-				margin-top: 2rem;
 				background: white;
 				border-width: 0;
 				padding: 1rem 5rem;
@@ -91,10 +91,6 @@ const Page = () => {
 
 			.post:hover {
 				box-shadow: 1px 1px 3px #aaa;
-			}
-
-			.post + .post {
-				margin-top: 2rem;
 			}
 		`}</style>
   </Layout>	
