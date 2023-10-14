@@ -54,14 +54,11 @@ const UpcomingEvents: React.FC<Props> = (props) => {
         .post {
           background: white;
           transition: box-shadow 0.1s ease-in;
+					margin-bottom: 2rem;
         }
 
         .post:hover {
           box-shadow: 1px 1px 3px #aaa;
-        }
-
-        .post + .post {
-          margin-bottom: 2rem;
         }
       `}</style>
     </Layout>

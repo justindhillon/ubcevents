@@ -5,19 +5,23 @@ import axios from "axios";
 import React from "react"
 import Post from "../components/Post"
 
-
 const fetchPost = async (page: number) => {
 	const feed = await axios.post('/api/post/get', {
-    	body: page,
-    }); 
+    body: page,
+  }); 
 	return feed;
 }
 
 const LoadMore = () => {
+  let showButton = true;
+
 	const { data, fetchNextPage, isFetchingNextPage } = useInfiniteQuery(
 		['query'],
 		async ({ pageParam = 1 }) => {
 			const response = await fetchPost(pageParam);
+      if (response.data.length < 5) {
+        showButton = false
+      }
 			return response.data;
 		},
 		{
@@ -44,12 +48,14 @@ const LoadMore = () => {
         </div>
       ))}
       <div style={{textAlign:"center"}}>
-        <button className="button" onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
-          {isFetchingNextPage
-          ? "Loading more..."
-          : "Load More"
+        {showButton &&
+          <button className="button" onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
+            {isFetchingNextPage
+              ? "Loading more..."
+              : "Load More"
+            }
+          </button>
         }
-        </button>
       </div>
       <style jsx>{`
         .post {
