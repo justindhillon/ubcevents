@@ -5,7 +5,7 @@ import prisma from "../../../lib/prisma";
 export default async function handle(req, res) {
   const post = req.body.body;
   const feed = await prisma.post.findMany({
-		skip: (post - 1) * 10,
+		skip: post * 10,
 		take: 10,
 		where: { published: true, moderated: true },
 		include: {
