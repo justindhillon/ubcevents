@@ -31,7 +31,6 @@ type Props = {
 }
 
 const UpcomingEvents: React.FC<Props> = (props) => {
-  console.log(props.feed);
   return (
     <Layout>
       <Head>
