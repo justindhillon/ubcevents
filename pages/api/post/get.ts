@@ -3,10 +3,11 @@ import prisma from "../../../lib/prisma";
 
 // POST /api/post/get
 export default async function handle(req, res) {
-  const page = req.body.body + 2;
+  const page = req.body;
+	console.log(page);
   const feed = await prisma.post.findMany({
-		skip: (page - 1) * 5 + 1,
-		take: page * 5,
+		skip: (page.body - 1) * 5 + 1,
+		take: page.body * 5,
 		where: { published: true, moderated: true },
 		include: {
 		  	author: {
