@@ -20,7 +20,7 @@ const LoadMore = () => {
 		['query'],
 		async ({ pageParam = 1 }) => {
 			const response = await fetchPost(pageParam);
-      if (response.data.length < 5) {
+      if (response.data.length < 2) {
         setShowButton(false);
       }
 			return response.data;
