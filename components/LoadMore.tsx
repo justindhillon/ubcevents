@@ -4,6 +4,7 @@ import { useInfiniteQuery } from "react-query";
 import axios from "axios";
 import React from "react"
 import Post from "../components/Post"
+import { useState } from "react";
 
 const fetchPost = async (page: number) => {
 	const feed = await axios.post('/api/post/get', {
@@ -13,7 +14,7 @@ const fetchPost = async (page: number) => {
 }
 
 const LoadMore = () => {
-  let showButton = true;
+  const [showButton, setShowButton] = useState(true);
 
 	const { data, fetchNextPage, isFetchingNextPage } = useInfiniteQuery(
 		['query'],
@@ -22,10 +23,8 @@ const LoadMore = () => {
       console.log(response);
       console.log(response.data.length);
       if (response.data.length < 5) {
-        showButton = false;
-        console.log("test");
+        setShowButton(false);
       }
-      console.log(showButton);
 			return response.data;
 		},
 		{
@@ -52,14 +51,14 @@ const LoadMore = () => {
         </div>
       ))}
       <div style={{textAlign:"center"}}>
-        {showButton &&
+        {showButton && (
           <button className="button" onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
             {isFetchingNextPage
               ? "Loading more..."
               : "Load More"
             }
           </button>
-        }
+        )}
       </div>
       <style jsx>{`
         .post {
