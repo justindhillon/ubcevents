@@ -23,7 +23,6 @@ const LoadMore = () => {
       if (response.data.length < 10) {
         setShowButton(false);
       }
-      console.log(response);
 			return response.data;
 		},
 		{
