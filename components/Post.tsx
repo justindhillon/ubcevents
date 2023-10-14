@@ -30,7 +30,7 @@ function convertTime(time) {
 
 const Post: React.FC<{ post: PostProps }> = ({ post }) => {
   const dateObj = new Date(post.eventDate);
-  const options = { year: 'numeric', month: 'long', day: 'numeric', timeZone: "Canada/Pacific" };
+  const options = { year: 'numeric', month: 'long', day: 'numeric', timeZone: "UTC" };
   const formattedDate = dateObj.toLocaleDateString('en-US', options);
 
   let time = "";
