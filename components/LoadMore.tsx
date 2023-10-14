@@ -7,6 +7,7 @@ import Post from "../components/Post"
 import { useState } from "react";
 
 const fetchPost = async (page: number) => {
+  console.log("fetch");
 	const feed = await axios.post('/api/post/get', {
     body: page,
   }); 
