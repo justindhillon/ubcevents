@@ -65,7 +65,7 @@ const Post: React.FC<PostProps> = (props) => {
   }
 
   const dateObj = new Date(props?.eventDate);
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const options = { year: 'numeric', month: 'long', day: 'numeric', timeZone: "UTC" };
   const formattedDate = dateObj.toLocaleDateString('en-US', options);
 
   let time = "";
