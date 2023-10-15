@@ -53,10 +53,10 @@ const Drafts: React.FC<Props> = (props) => {
     published: false,
   }
 
-  const showButton = true;
+  let showButton = true;
 
   if (props.drafts.length < 10) {
-    const showButton = false;
+    showButton = false;
   }
 
   return (
