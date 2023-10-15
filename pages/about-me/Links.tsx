@@ -68,7 +68,7 @@ const Links: React.FC = () => {
                     text-align: center;
                 }
 
-                .main:hover {
+                main:hover {
                     box-shadow: 1px 1px 3px #aaa;
                 }
 
