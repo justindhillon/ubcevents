@@ -68,6 +68,10 @@ const Links: React.FC = () => {
                     text-align: center;
                 }
 
+                .main:hover {
+                    box-shadow: 1px 1px 3px #aaa;
+                }
+
                 .links {
                     width: 100%;
                     max-width: 32rem;

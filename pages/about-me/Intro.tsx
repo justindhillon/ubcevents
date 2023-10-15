@@ -34,6 +34,10 @@ const Intro: React.FC = () => {
                     display: -webkit-flex;
                     display: flex;
                 }
+          
+                .main:hover {
+                    box-shadow: 1px 1px 3px #aaa;
+                }
 
                 .column {
                     -webkit-flex: 1;
