@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import Head from 'next/head'
 
-const Publish: React.FC<Props> = (props) => {
+const Publish: React.FC = () => {
   return (
     <Layout>
       <Head>

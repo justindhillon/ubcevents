@@ -37,7 +37,7 @@ const Draft: React.FC = () => {
         <form onSubmit={submitData}>
           <h1>New Draft</h1>
           <input
-            maxlength="150"
+            maxLength={150}
             autoFocus
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Title *"
@@ -45,7 +45,7 @@ const Draft: React.FC = () => {
             value={title}
           />
           <textarea
-            maxlength="10000"
+            maxLength={10000}
             cols={50}
             onChange={(e) => setContent(e.target.value)}
             placeholder="Content *"
@@ -53,7 +53,7 @@ const Draft: React.FC = () => {
             value={content}
           />
           <input
-            maxlength="100"
+            maxLength={100}
             autoFocus
             onChange={(e) => setLocation(e.target.value)}
             placeholder="Location"
