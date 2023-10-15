@@ -41,9 +41,9 @@ const LoadMore = ({ loadmore }) => {
           {Array.isArray(page)
             ? page.map((post) => {
               return (
-              <div key={post.id} className="post">
-              <Post post={post} />
-              </div>
+                <div key={post.id} className="post">
+                  <Post post={post} />
+                </div>
             )
           })
           : null

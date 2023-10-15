@@ -5,6 +5,8 @@ import Post, { PostProps } from "../components/Post";
 import { useSession, getSession } from "next-auth/react";
 import prisma from "../lib/prisma";
 import Head from 'next/head'
+import Footer from "../components/Footer";
+import LoadMore from "../components/LoadMore";
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const session = await getSession({ req });
@@ -46,6 +48,11 @@ const Drafts: React.FC<Props> = (props) => {
     );
   }
 
+  const loadmore = {
+    author: { email: session.user.email },
+    published: false,
+  }
+
   return (
     <Layout>
       <Head>
@@ -61,7 +68,8 @@ const Drafts: React.FC<Props> = (props) => {
             </div>
           ))}
         </main>
-        <br /><br />
+        <LoadMore loadmore={loadmore} />
+        <Footer />
       </div>
       <style jsx>{`
         .post {
