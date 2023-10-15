@@ -36,10 +36,10 @@ const UpcomingEvents: React.FC<Props> = (props) => {
     moderated: true 
   }
 
-  const showButton = true;
+  let showButton = true;
 
   if (props.feed.length < 10) {
-    const showButton = false;
+    showButton = false;
   }
 
   return (
