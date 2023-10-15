@@ -6,20 +6,21 @@ import React from "react"
 import Post from "../components/Post"
 import { useState } from "react";
 
-const fetchPost = async (page: number) => {
-	const feed = await axios.post('/api/post/get', {
-    body: page,
+const fetchPost = async (post: number, loadmore ) => {
+	const feed = await axios.post('/api/get', {
+    post: post,
+    loadmore: loadmore,
   }); 
 	return feed;
 }
 
-const LoadMore = () => {
+const LoadMore = ({ loadmore }) => {
   const [showButton, setShowButton] = useState(true);
 
 	const { data, fetchNextPage, isFetchingNextPage } = useInfiniteQuery(
 		['query'],
 		async ({ pageParam = 1 }) => {
-			const response = await fetchPost(pageParam);
+			const response = await fetchPost(pageParam, loadmore);
       if (response.data.length < 10) {
         setShowButton(false);
       }
