@@ -7,7 +7,7 @@ const Links: React.FC = () => {
             <div className="links">
                 <a href="https://github.com/justindhillon" target="_blank">
                     <Image
-                        src={"images/icons/github.jpg"}
+                        src="https://ubcevents.com/images/icons/github.jpg"
                         width={128}
                         height={128}
                         alt="Github"
