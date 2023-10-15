@@ -15,7 +15,7 @@ const Links: React.FC = () => {
                 </a>
                 <a href="https://twitter.com/justindhillon0" target="_blank">
                     <Image
-                        src="/images/icons/instagram.jpg"
+                        src="/images/icons/twitter.jpg"
                         width={128}
                         height={128}
                         alt="Twitter"
@@ -23,7 +23,7 @@ const Links: React.FC = () => {
                 </a>
                 <a href="https://www.linkedin.com/in/justin-dhillon-5b0780295/" target="_blank">
                     <Image
-                        src="/images/icons/instagram.jpg"
+                        src="/images/icons/linkedIn.jpg"
                         width={128}
                         height={128}
                         alt="Linkedin"
@@ -31,7 +31,7 @@ const Links: React.FC = () => {
                 </a>
                 <a href="https://github.com/justindhillon/ubcevents" target="_blank">
                     <Image
-                        src="/images/icons/instagram.jpg"
+                        src="/images/icons/source.jpg"
                         width={128}
                         height={128}
                         alt="Source"
@@ -39,7 +39,7 @@ const Links: React.FC = () => {
                 </a>
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=justin.singh.dhillon@gmail.com" target="_blank">
                     <Image
-                        src="/images/icons/instagram.jpg"
+                        src="/images/icons/gmail.jpg"
                         width={128}
                         height={128}
                         alt="Gmail"
