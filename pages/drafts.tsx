@@ -53,6 +53,12 @@ const Drafts: React.FC<Props> = (props) => {
     published: false,
   }
 
+  const showButton = true;
+
+  if (props.drafts.length < 10) {
+    const showButton = false;
+  }
+
   return (
     <Layout>
       <Head>
@@ -68,7 +74,7 @@ const Drafts: React.FC<Props> = (props) => {
             </div>
           ))}
         </main>
-        <LoadMore loadmore={loadmore} />
+        { showButton && <LoadMore loadmore={loadmore} /> }
         <Footer />
       </div>
       <style jsx>{`

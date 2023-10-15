@@ -36,6 +36,12 @@ const UpcomingEvents: React.FC<Props> = (props) => {
     moderated: true 
   }
 
+  const showButton = true;
+
+  if (props.feed.length < 10) {
+    const showButton = false;
+  }
+
   return (
     <Layout>
       <Head>
@@ -51,7 +57,7 @@ const UpcomingEvents: React.FC<Props> = (props) => {
             </div>
           ))}
         </main>
-				<LoadMore loadmore={loadmore} />
+				{ showButton && <LoadMore loadmore={loadmore} /> }
         <Footer />
       </div>
       <style jsx>{`
