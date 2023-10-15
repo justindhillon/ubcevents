@@ -6,6 +6,7 @@ import prisma from "../lib/prisma";
 import { useSession } from "next-auth/react";
 import Router from "next/router";
 import Head from 'next/head'
+import Footer from "../components/Footer";
 
 export const getStaticProps: GetStaticProps = async () => {
   const feed = await prisma.post.findMany({
@@ -72,6 +73,7 @@ const Moderation: React.FC<Props> = (props) => {
             </div>
           ))}
         </main>
+        <Footer />
         <br /><br />
       </div>
       <style jsx>{`
