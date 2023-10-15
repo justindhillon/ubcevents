@@ -4,6 +4,7 @@ import Layout from "../components/Layout"
 import Post, { PostProps } from "../components/Post"
 import prisma from "../lib/prisma";
 import Footer from "../components/Footer";
+import LoadMore from "../components/LoadMore";
 import Head from 'next/head';
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -30,7 +31,11 @@ type Props = {
 }
 
 const UpcomingEvents: React.FC<Props> = (props) => {
-  console.log(props.feed);
+  const loadmore = { 
+    published: true, 
+    moderated: true 
+  }
+
   return (
     <Layout>
       <Head>
@@ -46,20 +51,18 @@ const UpcomingEvents: React.FC<Props> = (props) => {
             </div>
           ))}
         </main>
+				<LoadMore loadmore={loadmore} />
         <Footer />
       </div>
       <style jsx>{`
         .post {
           background: white;
           transition: box-shadow 0.1s ease-in;
+					margin-bottom: 2rem;
         }
 
         .post:hover {
           box-shadow: 1px 1px 3px #aaa;
-        }
-
-        .post + .post {
-          margin-top: 2rem;
         }
       `}</style>
     </Layout>

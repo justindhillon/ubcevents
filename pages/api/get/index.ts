@@ -1,13 +1,12 @@
-import { getSession } from "next-auth/react";
 import prisma from "../../../lib/prisma";
 
-// POST /api/post/get
+// POST /api/get
 export default async function handle(req, res) {
-  const post = req.body.body;
+  const { post, loadmore } = req.body;
   const feed = await prisma.post.findMany({
 		skip: post * 10,
 		take: 10,
-		where: { published: true, moderated: true },
+		where: loadmore,
 		include: {
 		  	author: {
 				  select: { name: true },
