@@ -42,7 +42,8 @@ const Intro: React.FC = () => {
                 .column {
                     -webkit-flex: 1;
                     -ms-flex: 1;
-                    flex: 1;
+                    flex-grow: 1;
+                    flex-basis: 0;
                     padding: 2rem;
                     padding-top: 0rem;
                     text-align: center;
