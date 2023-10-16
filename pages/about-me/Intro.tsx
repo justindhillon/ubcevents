@@ -5,13 +5,14 @@ const Intro: React.FC = () => {
     return (
         <main>
             <div className="column">
-                <Image
-                    src="/images/profile.jpg"
-                    width={1000}
-                    height={1000}
-                    alt="Picture of the author"
-                    className={"circle"}
-                />
+                <div className="circle">
+                    <Image
+                        src="/images/profile.jpg"
+                        width={1000}
+                        height={1000}
+                        alt="Picture of the author"
+                    />
+                </div>
             </div>
             <div className="column">
                 <p className="text-block">
