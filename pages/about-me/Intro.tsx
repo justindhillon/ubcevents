@@ -7,8 +7,8 @@ const Intro: React.FC = () => {
             <div className="column">
                 <Image
                     src="/images/profile.jpg"
-                    width={1000}
-                    height={1000}
+                    width={500}
+                    height={500}
                     alt="Picture of the author"
                     className={"circle"}
                 />
