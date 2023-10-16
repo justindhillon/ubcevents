@@ -7,8 +7,9 @@ const Intro: React.FC = () => {
             <div className="column">
                 <Image
                     src="/images/profile.jpg"
-                    width={500}
-                    height={500}
+                    width={1000}
+                    height={1000}
+                    layout="responsive"
                     alt="Picture of the author"
                     className={"circle"}
                 />
@@ -42,8 +43,7 @@ const Intro: React.FC = () => {
                 .column {
                     -webkit-flex: 1;
                     -ms-flex: 1;
-                    flex-grow: 1;
-                    flex-basis: 0;
+                    flex: 1;
                     padding: 2rem;
                     padding-top: 0rem;
                     text-align: center;
