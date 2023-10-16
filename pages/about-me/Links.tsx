@@ -1,11 +1,11 @@
 import React from "react"
 import Image from 'next/image';
-import github from 'images/icons/github.jpg'
-import gmail from '../public/images/icons/gmail.jpg'
-import instagram from '../public/images/icons/instagram.jpg'
-import linkedIn from '../public/images/icons/linkedIn.jpg'
-import source from '../public/images/icons/source.jpg'
-import twitter from '../public/images/icons/twitter.jpg'
+import github from 'public/images/icons/github.jpg'
+import gmail from 'public/images/icons/gmail.jpg'
+import instagram from 'public/images/icons/instagram.jpg'
+import linkedIn from 'public/images/icons/linkedIn.jpg'
+import source from 'public/images/icons/source.jpg'
+import twitter from 'public/images/icons/twitter.jpg'
 
 const Links: React.FC = () => {
     return (
