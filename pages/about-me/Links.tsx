@@ -1,5 +1,11 @@
 import React from "react"
 import Image from 'next/image';
+import github from 'public/images/icons/github.jpg'
+import gmail from 'public/images/icons/gmail.jpg'
+import instagram from 'public/images/icons/instagram.jpg'
+import linkedIn from 'public/images/icons/linkedIn.jpg'
+import source from 'public/images/icons/source.jpg'
+import twitter from 'public/images/icons/twitter.jpg'
 
 const Links: React.FC = () => {
     return (
@@ -7,7 +13,7 @@ const Links: React.FC = () => {
             <div className="links">
                 <a href="https://github.com/justindhillon" target="_blank">
                     <Image
-                        src="/images/icons/github.jpg"
+                        src={github}
                         width={128}
                         height={128}
                         alt="Github"
@@ -15,7 +21,7 @@ const Links: React.FC = () => {
                 </a>
                 <a href="https://twitter.com/justindhillon0" target="_blank">
                     <Image
-                        src="/images/icons/twitter.jpg"
+                        src={twitter}
                         width={128}
                         height={128}
                         alt="Twitter"
@@ -23,7 +29,7 @@ const Links: React.FC = () => {
                 </a>
                 <a href="https://www.linkedin.com/in/justin-dhillon-5b0780295/" target="_blank">
                     <Image
-                        src="/images/icons/linkedIn.jpg"
+                        src={linkedIn}
                         width={128}
                         height={128}
                         alt="Linkedin"
@@ -31,7 +37,7 @@ const Links: React.FC = () => {
                 </a>
                 <a href="https://github.com/justindhillon/ubcevents" target="_blank">
                     <Image
-                        src="/images/icons/source.jpg"
+                        src={source}
                         width={128}
                         height={128}
                         alt="Source"
@@ -39,7 +45,7 @@ const Links: React.FC = () => {
                 </a>
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=justin.singh.dhillon@gmail.com" target="_blank">
                     <Image
-                        src="/images/icons/gmail.jpg"
+                        src={gmail}
                         width={128}
                         height={128}
                         alt="Gmail"
@@ -47,7 +53,7 @@ const Links: React.FC = () => {
                 </a>
                 <a href="https://www.instagram.com/ubc_events/" target="_blank">
                     <Image
-                        src="/images/icons/instagram.jpg"
+                        src={instagram}
                         width={128}
                         height={128}
                         alt="Instagram"
