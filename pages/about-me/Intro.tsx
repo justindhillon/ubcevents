@@ -9,7 +9,7 @@ const Intro: React.FC = () => {
                     src="/images/profile.jpg"
                     width={1000}
                     height={1000}
-                    layout="responsive"
+                    layout="fill"
                     alt="Picture of the author"
                     className={"circle"}
                 />
