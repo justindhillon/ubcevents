@@ -21,6 +21,6 @@ $
 $ # Start the application at https://localhost:3000.
 ```
 
-## Creddit
+## Credits
 - [How to setup a vps](https://drive.google.com/file/d/1q8Yk_qMm_xsweXOStsRf-R-sMXmD6qpu/view?pli=1)
 - [Next.js Docs](https://nextjs.org/docs)
