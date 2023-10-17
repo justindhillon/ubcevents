@@ -21,7 +21,7 @@ const Links: React.FC = () => {
                         alt="Twitter"
                     />
                 </a>
-                <a href="https://www.linkedin.com/in/justin-dhillon-5b0780295/" target="_blank">
+                <a href="https://www.linkedin.com/in/justin-dhillon/" target="_blank">
                     <Image
                         src="/images/icons/linkedIn.jpg"
                         width={128}
