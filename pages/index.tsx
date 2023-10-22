@@ -65,6 +65,7 @@ const UpcomingEvents: React.FC<Props> = (props) => {
           background: white;
           transition: box-shadow 0.1s ease-in;
 					margin-bottom: 2rem;
+          word-wrap: break-word;
         }
 
         .post:hover {

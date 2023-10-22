@@ -103,6 +103,7 @@ const Post: React.FC<PostProps> = (props) => {
         .page {
           background: white;
           padding: 2rem;
+          word-wrap: break-word;
         }
 
         .actions {
