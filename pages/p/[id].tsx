@@ -94,7 +94,7 @@ const Post: React.FC<PostProps> = (props) => {
       <div>
         <h2>{title}</h2>
         <p>By {props?.author?.name || "Unknown author"}</p>
-        <Markup children={contentWithLinks} />
+        <Markup markup={contentWithLinks} />
         <p>📅 {formattedDate}</p>
         {time && <p>⏰ {time}</p>}
         {props?.location && <p>📍 {props?.location}</p>}
