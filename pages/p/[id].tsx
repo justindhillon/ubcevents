@@ -82,7 +82,7 @@ const Post: React.FC<PostProps> = (props) => {
   // Replace URLs with links
   const urlRegex = /https?:\/\/[^\s/$.?#].[^\s]*/g;
   const contentWithLinks = props.content.replace(urlRegex, (url) => {
-    return `{<a href="${url}" target="_blank">${url}</a>}`;
+    return `<a href="${url}" target="_blank">${url}</a>`;
   });
 
   return (
