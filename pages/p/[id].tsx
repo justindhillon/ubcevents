@@ -79,6 +79,12 @@ const Post: React.FC<PostProps> = (props) => {
     time += " - " + endTime
   }
 
+  // Replace URLs with links
+  const urlRegex = /https?:\/\/[^\s/$.?#].[^\s]*/g;
+  const contentWithLinks = props.content.replace(urlRegex, (url) => {
+    return `<a href="${url}" target="_blank">${url}</a>`;
+  });
+
   return (
     <Layout>
       <Head>
@@ -88,7 +94,7 @@ const Post: React.FC<PostProps> = (props) => {
       <div>
         <h2>{title}</h2>
         <p>By {props?.author?.name || "Unknown author"}</p>
-        <ReactMarkdown children={props.content} />
+        <ReactMarkdown children={contentWithLinks} />
         <p>📅 {formattedDate}</p>
         {time && <p>⏰ {time}</p>}
         {props?.location && <p>📍 {props?.location}</p>}
