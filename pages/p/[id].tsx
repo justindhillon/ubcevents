@@ -1,12 +1,12 @@
 import React from "react";
 import { GetServerSideProps } from "next";
+import ReactMarkdown from "react-markdown";
 import Layout from "../../components/Layout";
 import Router from "next/router";
 import { PostProps } from "../../components/Post";
 import { useSession } from "next-auth/react";
 import prisma from "../../lib/prisma";
 import Head from 'next/head'
-import { Markup } from "react-render-markup";
 
 function convertTime(time) {
   const timeParts = time.split(':');
@@ -79,11 +79,13 @@ const Post: React.FC<PostProps> = (props) => {
     time += " - " + endTime
   }
 
-  // Replace URLs with links
-  const urlRegex = /https?:\/\/[^\s/$.?#].[^\s]*/g;
-  const contentWithLinks = props.content.replace(urlRegex, (url) => {
-    return `<a href="${url}" target="_blank">${url}</a>`;
-  });
+  function LinkRenderer(props: any) {
+    return (
+      <a href={props.href} target="_blank" rel="noreferrer">
+        {props.children}
+      </a>
+    );
+  }
 
   return (
     <Layout>
@@ -94,7 +96,7 @@ const Post: React.FC<PostProps> = (props) => {
       <div>
         <h2>{title}</h2>
         <p>By {props?.author?.name || "Unknown author"}</p>
-        <Markup markup={contentWithLinks} />
+        <ReactMarkdown children={props.content} components={{ a: LinkRenderer }} />
         <p>📅 {formattedDate}</p>
         {time && <p>⏰ {time}</p>}
         {props?.location && <p>📍 {props?.location}</p>}
