@@ -79,13 +79,11 @@ const Post: React.FC<PostProps> = (props) => {
     time += " - " + endTime
   }
 
-  function LinkRenderer(props: any) {
-    return (
-      <a href={props.href} target="_blank" rel="noreferrer">
-        {props.children}
-      </a>
-    );
-  }
+  // Define a regular expression pattern
+  var pattern = /(https?:\/\/\S+)/g;
+
+  // Use the replace method to replace the matched URLs
+  var modifiedText = props.content.replace(pattern, '<$1/>');
 
   return (
     <Layout>
@@ -96,7 +94,7 @@ const Post: React.FC<PostProps> = (props) => {
       <div>
         <h2>{title}</h2>
         <p>By {props?.author?.name || "Unknown author"}</p>
-        <ReactMarkdown children={props.content} components={{ a: LinkRenderer }} />
+        <ReactMarkdown children={modifiedText} />
         <p>📅 {formattedDate}</p>
         {time && <p>⏰ {time}</p>}
         {props?.location && <p>📍 {props?.location}</p>}
