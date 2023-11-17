@@ -46,7 +46,7 @@ const UpcomingEvents: React.FC<Props> = (props) => {
     <Layout>
       <Head>
         <title>UBC Events</title>
-        <meta property="description" content="Everything UBC" />
+        <meta name="description" content="Discover the vibrant campus life at the University of British Columbia with ubcevents.com. Stay updated with the latest events, workshops, and activities happening at UBC. Whether you're a student, faculty member, or a visitor, our comprehensive event listings and insightful articles connect you with the heart of the UBC community. Explore academic seminars, cultural festivals, sports events, and more – all at your fingertips!" />
       </Head>
       <div className="page">
         <h1>Upcoming Events</h1>
