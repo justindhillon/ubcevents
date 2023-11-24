@@ -1,7 +1,7 @@
 {
-  "name": "hello-next",
+  "name": "ubcevents",
   "version": "1.0.0",
-  "description": "",
+  "description": "UBC Events: a website that lists upcoming ubc events.",
   "scripts": {
     "dev": "next",
     "build": "next build",
