@@ -1,10 +1,9 @@
-import React from "react"
+import React, { useState } from "react";
 import type { GetStaticProps } from "next"
 import Layout from "../components/Layout"
 import Post, { PostProps } from "../components/Post"
 import prisma from "../lib/prisma";
 import { useSession } from "next-auth/react";
-import Router from "next/router";
 import Head from 'next/head'
 import Footer from "../components/Footer";
 
@@ -32,18 +31,29 @@ type Props = {
 }
 
 const Moderation: React.FC<Props> = (props) => {
-  const {data: session, status} = useSession();
+  // Initialize state for the feed
+  const [feed, setFeed] = useState(props.feed);
+  const { data: session, status } = useSession();
 
+  // Function to remove a post from the feed
   async function moderatePost(id: string): Promise<void> {
+    // API call to moderate the post
     await fetch(`/api/moderate/${id}`, {
       method: "PUT",
     });
+
+    // Update the state to remove the moderated post
+    setFeed(currentFeed => currentFeed.filter(post => post.id !== id));
   }
   
   async function deletePost(id: string): Promise<void> {
+    // API call to delete the post
     await fetch(`/api/post/${id}`, {
       method: "DELETE",
     });
+
+    // Update the state to remove the moderated post
+    setFeed(currentFeed => currentFeed.filter(post => post.id !== id));
   }
 
   return (
@@ -55,7 +65,7 @@ const Moderation: React.FC<Props> = (props) => {
       <div className="page">
         <h1>Moderation</h1>
         <main>
-          {props.feed.map((post) => (
+          {feed.map((post) => (
             <div key={post.id} className="post">
               <Post post={post} />
               { session?.user.moderator &&
